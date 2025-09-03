@@ -1,0 +1,264 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --body-font-family: "Work Sans", Helvetica;
+  --body-font-size: 13px;
+  --body-font-style: normal;
+  --body-font-weight: 400;
+  --body-letter-spacing: -0.26px;
+  --body-line-height: normal;
+  --desktop-display-2xl-light-font-family: "Lyon Arabic Display", Helvetica;
+  --desktop-display-2xl-light-font-size: 60px;
+  --desktop-display-2xl-light-font-style: normal;
+  --desktop-display-2xl-light-font-weight: 300;
+  --desktop-display-2xl-light-letter-spacing: 0px;
+  --desktop-display-2xl-light-line-height: 110.00000238418579%;
+  --desktop-display-md-light-font-family: "Lyon Arabic Display", Helvetica;
+  --desktop-display-md-light-font-size: 36px;
+  --desktop-display-md-light-font-style: normal;
+  --desktop-display-md-light-font-weight: 300;
+  --desktop-display-md-light-letter-spacing: 0px;
+  --desktop-display-md-light-line-height: 40px;
+  --desktop-text-md-regular-font-family: "GT America", Helvetica;
+  --desktop-text-md-regular-font-size: 16px;
+  --desktop-text-md-regular-font-style: normal;
+  --desktop-text-md-regular-font-weight: 400;
+  --desktop-text-md-regular-letter-spacing: 0px;
+  --desktop-text-md-regular-line-height: 20px;
+  --desktop-text-sm-14-CTA-font-family: "GT America", Helvetica;
+  --desktop-text-sm-14-CTA-font-size: 14px;
+  --desktop-text-sm-14-CTA-font-style: normal;
+  --desktop-text-sm-14-CTA-font-weight: 400;
+  --desktop-text-sm-14-CTA-letter-spacing: 1px;
+  --desktop-text-sm-14-CTA-line-height: 20px;
+  --fuschia-100: rgba(239, 93, 168, 1);
+  --fuschia-60: rgba(252, 221, 236, 1);
+  --fuschia-80: rgba(241, 120, 182, 1);
+  --header-1-font-family: "Work Sans", Helvetica;
+  --header-1-font-size: 34px;
+  --header-1-font-style: normal;
+  --header-1-font-weight: 700;
+  --header-1-letter-spacing: -0.68px;
+  --header-1-line-height: normal;
+  --header-2-font-family: "Work Sans", Helvetica;
+  --header-2-font-size: 20px;
+  --header-2-font-style: normal;
+  --header-2-font-weight: 700;
+  --header-2-letter-spacing: -0.4px;
+  --header-2-line-height: normal;
+  --iris-100: rgba(93, 95, 239, 1);
+  --iris-60: rgba(165, 166, 246, 1);
+  --iris-80: rgba(120, 121, 241, 1);
+  --primitives-base-black: rgba(0, 0, 0, 1);
+  --primitives-base-white: rgba(255, 255, 255, 1);
+  --primitives-base-white-56: rgba(255, 255, 255, 0.56);
+  --primitives-brand-400: rgba(255, 83, 109, 1);
+  --primitives-grey-500: rgba(109, 109, 109, 1);
+  --primitives-grey-700: rgba(79, 79, 79, 1);
+  --token-background-brand-2: var(--primitives-brand-400);
+  --token-background-white: var(--primitives-base-white);
+  --token-iconography-black: var(--primitives-base-black);
+  --token-stroke-black: var(--primitives-base-black);
+  --token-stroke-white-56: var(--primitives-base-white-56);
+  --token-typography-black: var(--primitives-base-black);
+  --token-typography-grey-500: var(--primitives-grey-500);
+  --token-typography-grey-700: var(--primitives-grey-700);
+  --token-typography-white: var(--primitives-base-white);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

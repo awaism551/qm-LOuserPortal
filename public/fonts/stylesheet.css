@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmerica-Medium.woff2') format('woff2'),
+        url('GTAmerica-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmerica-Regular.woff2') format('woff2'),
+        url('GTAmerica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Display';
+    src: url('LyonArabicDisplay-Bold.woff2') format('woff2'),
+        url('LyonArabicDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Display';
+    src: url('LyonArabicDisplay-Regular.woff2') format('woff2'),
+        url('LyonArabicDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Text';
+    src: url('LyonArabicText-RegularNo2.woff2') format('woff2'),
+        url('LyonArabicText-RegularNo2.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Display';
+    src: url('LyonArabicDisplay-Medium.woff2') format('woff2'),
+        url('LyonArabicDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Display';
+    src: url('LyonArabicDisplay-Black.woff2') format('woff2'),
+        url('LyonArabicDisplay-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Display';
+    src: url('LyonArabicDisplay-Light.woff2') format('woff2'),
+        url('LyonArabicDisplay-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lyon Arabic Text';
+    src: url('LyonArabicText-Bold.woff2') format('woff2'),
+        url('LyonArabicText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
