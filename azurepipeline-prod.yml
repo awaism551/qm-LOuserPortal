@@ -1,0 +1,108 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: Shared Agent
+  demands:
+    - agent.name -equals commonvmagentprod
+
+variables:
+- group: prod-env-variables
+- name: system.debug
+  value: true
+
+stages:
+# Stage 1: Build and Push Docker Image
+- stage: BuildandPushtoDevelopment
+  displayName: 'Build and Push Docker Image'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+  jobs:
+    - job: BuildAndPushDockerImage
+      displayName: 'Build and Push Docker Image'
+      steps:
+        - checkout: self
+        - task: Bash@3
+          displayName: 'Display Current Branch'
+          inputs:
+            targetType: 'inline'
+            script: 'echo "Current branch: $(Build.SourceBranchName)"'
+            
+      
+
+        - task: Docker@2
+          displayName: 'Build Docker Image'
+          inputs:
+            containerRegistry: 'LOProdACRServiceConnection'
+            repository: 'lo-userportal-repository'
+            command: 'build'
+            Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+            tags: |
+              $(Build.BuildId)
+              $(image-tag)
+            arguments: '--no-cache'
+            addPipelineData: false
+            addBaseImageData: false
+
+        - task: Docker@2
+          displayName: 'Push Docker Image to ACR'
+          inputs:
+            containerRegistry: 'LOProdACRServiceConnection'
+            repository: 'lo-userportal-repository'
+            command: 'push'
+            tags: |
+              $(Build.BuildId)
+              $(image-tag)
+
+        - task: SnykSecurityScan@1
+          displayName: 'Scan Docker Image Using Snyk'
+          inputs:
+            serviceConnectionEndpoint: 'SnykAPIToken'
+            testType: 'container'
+            dockerImageName: 'sharedconregprod.azurecr.io/lo-userportal-repository:$(Build.BuildId)'
+            dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+            monitorWhen: 'always'
+            failOnIssues: false
+            organization: '10e24eb6-03ff-4228-9b68-00e14bcf33bd'
+
+        - task: Bash@3
+          displayName: 'Remove all Docker images from Agent'
+          inputs:
+            targetType: 'inline'
+            script: |
+              docker system prune -a -f
+
+# Stage 2: Restart Deployment in AKS
+- stage: RestartDeployment
+  displayName: 'Restart Deployment'
+  dependsOn: BuildandPushtoDevelopment
+  condition: and(eq(variables['Build.SourceBranch'], 'refs/heads/main'), succeeded())
+  jobs:
+    - job: Restart_Deployment
+      displayName: 'Restart Deployment'
+      steps:
+        - checkout: self
+
+        - task: KubectlInstaller@0
+          displayName: 'Install Kubectl'
+          inputs:
+            kubectlVersion: 'latest'
+
+        - task: Kubernetes@1
+          displayName: 'Login to AKS'
+          inputs:
+            connectionType: 'Azure Resource Manager'
+            azureSubscriptionEndpoint: 'LOProdARMServiceConnection'
+            azureResourceGroup: '$(ResourceGroup)'
+            kubernetesCluster: '$(AKS-Cluster)'
+            useClusterAdmin: true
+            namespace: '$(kube-namespace)'
+            command: 'login'
+
+        - task: Bash@3
+          displayName: 'Restart Deployment'
+          inputs:
+            targetType: 'inline'
+            script: |
+              kubectl -n $(kube-namespace) rollout restart deploy $(aks-deploy-userportal)
