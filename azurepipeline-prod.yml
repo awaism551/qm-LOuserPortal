@@ -4,7 +4,7 @@ trigger:
       - main
 
 pool:
-  name: Shared Agent
+  name: Shared Agent Prod
   demands:
     - agent.name -equals commonvmagentprod
 
