@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @font-face {
   font-family: 'GT America';
   src: url('/fonts/GTAmerica-Medium.woff2') format('woff2'),
@@ -119,10 +120,22 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-brand-main: #FF536D;
+  --color-Typography-Brand: #ff536d;
+  --color-typography-white-64: rgba(255, 255, 255, 0.64);
+  --color-Button-Background-Default: #FF536D;
+  --color-Background-Brand-1: #FFF3F7;
+  --color-Background-Brand-2: #ff536d;
+  --color-Button-Background-Blur-10: rgba(255, 255, 255, 0.1);
+  --color-Iconography-Grey-400: #808080;
+  --color-Stroke-Brand: #ff536d;
+  --color-Typography-Grey-500: #6B7280;
+  --color-Typography-White: #FFFFFF;
+  --color-Typography-White-light: #b0b0b0;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-page-main: #3A2235;
 }
 
 :root {
@@ -215,9 +228,38 @@
   }
 }
 
+#event-public-hero-section {
+  background-image: url('/images/public-event.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#event-schedule-hero-section {
+  color: #ffffff;
+  background-image: url('/images/schedule.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#event-upcoming-hero-section {
+  background-image: url('/images/upcoming-event.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #header-hero-section {
   color: #ffffff;
   background-image: url('/images/header-image_overlay.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#event-hero-section {
+  background-image: url('/images/event-banner-image.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
