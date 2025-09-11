@@ -350,12 +350,19 @@ export const minusIcon = () => (
   
 );    
 
-export const plusIcon = () => (
+export const plusIcon = (color = "black") => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 3V15" stroke="black" strokeWidth="1.2" strokeLinejoin="round"/>
-    <path d="M3 9H15" stroke="black" strokeWidth="1.2" strokeLinejoin="round"/>
-  </svg>
-);  
+      <path d="M9 3V15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
+      <path d="M3 9H15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
+</svg>
+);
+
+export const plusIconBig = (color = "black") => (
+  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 3V15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
+      <path d="M3 9H15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
+</svg>
+);
 
 export const paymentIcon = () => {
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -397,3 +404,5 @@ export const upArrowIcon = () => (
     />
   </svg>
 );
+
+ 
