@@ -173,6 +173,14 @@ export const upcomingEvent = [
     category: "Architecture & Urban",
     location: "Lynx Tower, Doha. Qatar 2",
   },
+  {
+    id: 7,
+    type: "Public Event",
+    title: "The Power of Storytelling in the Gulf",
+    date: "21 Jun, 2025 - 19:00 - 19:30",
+    category: "Architecture & Urban",
+    location: "Lynx Tower, Doha. Qatar 2",
+  },
 ];
 
 export const InsiderBenefits = [

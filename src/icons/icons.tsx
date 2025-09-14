@@ -158,7 +158,7 @@ export const userIcon = () => (
   </svg>
 );
 
-export const homeIcon = (color="black") => (
+export const homeIcon = (color = "black") => (
   <svg
     width="18"
     height="18"
@@ -183,7 +183,7 @@ export const homeIcon = (color="black") => (
   </svg>
 );
 
-export const accountIcon = (color="black") => (
+export const accountIcon = (color = "black") => (
   <svg
     width="18"
     height="18"
@@ -211,7 +211,7 @@ export const accountIcon = (color="black") => (
   </svg>
 );
 
-export const eventsIcon = (color="black") => (
+export const eventsIcon = (color = "black") => (
   <svg
     width="18"
     height="18"
@@ -245,7 +245,7 @@ export const eventsIcon = (color="black") => (
   </svg>
 );
 
-export const helpIcon = (color="black") => (
+export const helpIcon = (color = "black") => (
   <svg
     width="18"
     height="16"
@@ -338,38 +338,83 @@ export const leftArrowIcon = () => (
 );
 
 export const checkIcon = () => (
-  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1.33301 6.39575L3.66634 8.72909L10.6663 1.39575" stroke="#808080" strokeWidth="1.5"/>
+  <svg
+    width="12"
+    height="10"
+    viewBox="0 0 12 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.33301 6.39575L3.66634 8.72909L10.6663 1.39575"
+      stroke="#808080"
+      strokeWidth="1.5"
+    />
   </svg>
 );
 
 export const minusIcon = () => (
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-    <path d="M0 0 C3.96 0 7.92 0 12 0 C12 0.66 12 1.32 12 2 C8.04 2 4.08 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="#FFFFFF" transform="translate(3,8)"/>
+    <path
+      d="M0 0 C3.96 0 7.92 0 12 0 C12 0.66 12 1.32 12 2 C8.04 2 4.08 2 0 2 C0 1.34 0 0.68 0 0 Z "
+      fill="#FFFFFF"
+      transform="translate(3,8)"
+    />
   </svg>
-  
-);    
+);
 
 export const plusIcon = (color = "black") => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 3V15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
-      <path d="M3 9H15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
-</svg>
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9 3V15"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    ></path>
+    <path
+      d="M3 9H15"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    ></path>
+  </svg>
 );
 
 export const plusIconBig = (color = "black") => (
   <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 3V15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
-      <path d="M3 9H15" stroke={color} stroke-width="1.2" stroke-linejoin="round"></path>
-</svg>
+    <path
+      d="M9 3V15"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    ></path>
+    <path
+      d="M3 9H15"
+      stroke={color}
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    ></path>
+  </svg>
 );
 
 export const paymentIcon = () => {
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 3V15" stroke="black" strokeWidth="1.2" strokeLinejoin="round"/>
-    <path d="M3 9H15" stroke="black" strokeWidth="1.2" strokeLinejoin="round"/>
-  </svg>
-}
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M9 3V15" stroke="black" strokeWidth="1.2" strokeLinejoin="round" />
+    <path d="M3 9H15" stroke="black" strokeWidth="1.2" strokeLinejoin="round" />
+  </svg>;
+};
 
 export const downArrowIcon = () => (
   <svg
@@ -405,4 +450,25 @@ export const upArrowIcon = () => (
   </svg>
 );
 
- 
+export const logout = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M9.825 3C6.21643 3 3.375 5.73115 3.375 9C3.375 12.2688 6.21643 15 9.825 15C10.1475 15 10.4641 14.978 10.7732 14.9357L10.9768 16.4218C10.6004 16.4734 10.2158 16.5 9.825 16.5C5.48067 16.5 1.875 13.187 1.875 9C1.875 4.813 5.48067 1.5 9.825 1.5C10.2158 1.5 10.6004 1.52664 10.9768 1.5782L10.7732 3.06432C10.4641 3.02198 10.1475 3 9.825 3Z"
+      fill="#141B34"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M13.2535 9.74989L12.2837 10.7195L13.3444 11.7802L16.1249 8.99989L13.3444 6.21954L12.2837 7.28024L13.2535 8.24989H7.56421V9.74989H13.2535Z"
+      fill="#141B34"
+    />
+  </svg>
+);

@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import OrderSummary from "@/components/ui/OrderSummery";
 import { paymentIcon } from "@/icons/icons";
 import CheckoutHeader from "@/components/account-benefits/breadcrumb/CheckoutHeader";
-import CheckoutBreadcrum from "@/components/account-benefits/breadcrumb/CheckoutBreadcrum";
+import CheckoutBreadcrum from "@/components/account-benefits/breadcrumb/CheckoutBreadcrumb";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -89,7 +89,7 @@ const CartDetails = () => {
                               onChange={(e) => setLastName(e.target.value)}
                             />
                           </div>
-                          <div className="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-White-20%/20" />
+                          <div className="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-White-20" />
                         </div>
                       </div>
                       <div

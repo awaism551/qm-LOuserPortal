@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { homeIcon, accountIcon, eventsIcon, helpIcon } from "@/icons/icons";
+import { homeIcon, accountIcon, eventsIcon, helpIcon, logout } from "@/icons/icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -95,9 +95,8 @@ export default function SidebarMenu() {
           data-property-1="Final Default"
           className="self-stretch h-10 px-5 py-2.5 inline-flex justify-start items-center gap-2.5"
         >
-          <div className="w-4 h-4 relative overflow-hidden">
-            <div className="w-2.5 h-3.5 left-[1.88px] top-[1.50px] absolute bg-slate-900" />
-            <div className="w-2 h-1.5 left-[7.56px] top-[6.22px] absolute bg-slate-900" />
+          <div className="w-4 h-4 relative">
+            {logout()}
           </div>
           <div className="flex-1 justify-start text-Typography-Black text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight">
             log out

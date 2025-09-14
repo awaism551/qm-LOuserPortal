@@ -1,6 +1,7 @@
 import React from "react";
 import { checkIcon } from "@/icons/icons";
 import { InsiderBenefits } from "@/app/context/EventLists";
+import Link from "next/link";
 
 const MembershipDetails = () => {
   return (
@@ -46,6 +47,7 @@ const MembershipDetails = () => {
                 for yearly
               </div>
             </div>
+            <Link href="/en/designs/accounts-benefits/cart" className="self-stretch">
             <div className="self-stretch flex flex-col justify-start items-start gap-3">
               <div
                 data-icon-placeholder="false"
@@ -55,7 +57,7 @@ const MembershipDetails = () => {
                 className="self-stretch outline outline-1 outline-offset-[-1px] outline-Button-Background-Stroke-56%/60 inline-flex justify-start items-center"
               >
                 <div className="flex-1 h-10 px-5 py-3 bg-Button-Background-Default flex justify-center items-center gap-2.5 overflow-hidden">
-                  <div className="text-center justify-start text-white text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide">
+                  <div className="text-center justify-start text-white text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide" >
                     Subscribe Now
                   </div>
                 </div>
@@ -64,6 +66,7 @@ const MembershipDetails = () => {
                 Membership can be paused or canceled anytime
               </div>
             </div>
+            </Link>
           </div>
         </div>
         <div className="self-stretch p-6 bg-Background-White outline outline-1 outline-offset-[-1px] outline-Stroke-Grey flex flex-col justify-start items-start gap-3">

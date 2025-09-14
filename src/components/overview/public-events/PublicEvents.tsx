@@ -17,7 +17,7 @@ const PublicEvents: React.FC<PublicEventsProps> = ({ eventlists }) => {
         <div className="self-stretch inline-flex justify-start items-start gap-6">
           {eventlists.map((event, index) => (
             <div data-breakpoint="Desktop" key={index} id="event-public-hero-section" className="w-[510px] px-5 pt-36 pb-6 relative bg-gradient-to-b from-black/0 to-black/80 inline-flex flex-col justify-end items-start gap-2.5 overflow-hidden">
-            <div className="self-stretch inline-flex justify-end items-end gap-40">
+            <div className="strokeMiterlimit">
               <div className="flex-1 inline-flex flex-col justify-start items-start gap-3">
                 <div className="self-stretch flex flex-col justify-start items-start gap-5">
                   <div className="text-center justify-start text-Typography-White text-[10px] font-normal font-['GT_America'] uppercase leading-tight tracking-wide">Culinary</div>
