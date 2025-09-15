@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'tailwindcss'
 
 export default defineConfig({
@@ -7,4 +8,3 @@ export default defineConfig({
     "./components/**/*.{ts,tsx}",
   ],
 })
-  

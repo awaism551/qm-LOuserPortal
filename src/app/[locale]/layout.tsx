@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
-
 import ApolloWrapper from "@/lib/apollo-provider";
 import { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
+import TopNav from "@/components/layout/user-portal/TopNav";
+import SidebarMenu from "@/components/layout/user-portal/SidebarMenu";
 
 interface Props {
   children: ReactNode;
@@ -44,7 +45,22 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <ApolloWrapper>{children}</ApolloWrapper>
+          <ApolloWrapper>
+
+            <div className="flex flex-row">
+              <div>
+                <SidebarMenu />
+              </div>
+              <div className="w-full bg-page-main">
+                <div className="w-full">
+                  <TopNav />
+                </div>
+                <div>
+                {children}
+                </div>
+              </div>
+            </div>
+          </ApolloWrapper>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -6,11 +6,11 @@ export default function Footer() {
     <div data-layer="Subscribe Section" className="SubscribeSection flex-1 inline-flex flex-col justify-center items-start gap-8">
       <div data-layer="Text Content" className="TextContent self-stretch flex flex-col justify-start items-start gap-3">
         <div data-layer="All news is good news" className="AllNewsIsGoodNews justify-start text-Typography-White text-6xl font-light font-['Lyon_Arabic_Display'] capitalize leading-[66px]">All news is good news </div>
-        <div data-layer="Subtitle" className="Subtitle justify-start text-Typography-White-64%/60 text-base font-normal font-['GT_America'] leading-tight">Be the first to know about new arrivals, online promotions and more.</div>
+        <div data-layer="Subtitle" className="Subtitle justify-start text-Typography-White-lighttext-base font-normal font-['GT_America'] leading-tight">Be the first to know about new arrivals, online promotions and more.</div>
       </div>
       <div data-layer="CTA Content" className="CtaContent size- inline-flex justify-start items-center gap-5">
         <div data-layer="Input" data-property-1="Default" className="Input w-[608px] h-12 px-3.5 py-5 bg-Button-Background-Blur-10%/10 outline outline-1 outline-offset-[-1px] outline-Stroke-White-20%/20 flex justify-center items-center gap-2.5 overflow-hidden">
-          <div data-layer="First Copy 4" className="FirstCopy4 flex-1 justify-start text-Typography-White-64%/60 text-base font-normal font-['GT_America'] leading-tight">Your Email</div>
+          <div data-layer="First Copy 4" className="FirstCopy4 flex-1 justify-start text-Typography-White-lighttext-base font-normal font-['GT_America'] leading-tight">Your Email</div>
         </div>
         <div data-layer="Button" data-property-1="Black Stroke" className="Button size- px-20 py-5 bg-Background-Brand-2 outline outline-1 outline-offset-[-1px] outline-stone-300/10 flex justify-start items-center gap-2.5 overflow-hidden">
           <div data-layer="Paragraph" className="Paragraph text-center justify-start text-Text-text-white text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight">subscribe</div>
@@ -53,10 +53,10 @@ export default function Footer() {
   <div data-layer="Frame 2131336605" className="Frame2131336605 self-stretch flex flex-col justify-start items-start gap-10">
     <div data-layer="Line 1401" className="Line1401 self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-White-20%/20"></div>
     <div data-layer="Frame 2131336178" className="Frame2131336178 self-stretch inline-flex justify-between items-center">
-      <div data-layer="© Qatar Creates 2025. All Rights Reserved." className="QatarCreates2025AllRightsReserved justify-start text-Typography-White-64%/60 text-base font-normal font-['GT_America'] leading-tight">© Qatar Creates 2025. All Rights Reserved.</div>
+      <div data-layer="© Qatar Creates 2025. All Rights Reserved." className="QatarCreates2025AllRightsReserved justify-start text-Typography-White-lighttext-base font-normal font-['GT_America'] leading-tight">© Qatar Creates 2025. All Rights Reserved.</div>
       <div data-layer="Frame 2131336586" className="Frame2131336586 size- flex justify-start items-center gap-5">
-        <div data-layer="Terms & Conditions" className="TermsConditions justify-start text-Typography-White-64%/60 text-base font-normal font-['GT_America'] leading-tight">Terms & Conditions</div>
-        <div data-layer="Privacy Policy" className="PrivacyPolicy justify-start text-Typography-White-64%/60 text-base font-normal font-['GT_America'] leading-tight">Privacy Policy</div>
+        <div data-layer="Terms & Conditions" className="TermsConditions justify-start text-Typography-White-lighttext-base font-normal font-['GT_America'] leading-tight">Terms & Conditions</div>
+        <div data-layer="Privacy Policy" className="PrivacyPolicy justify-start text-Typography-White-lighttext-base font-normal font-['GT_America'] leading-tight">Privacy Policy</div>
       </div>
     </div>
   </div>
