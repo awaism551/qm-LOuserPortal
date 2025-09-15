@@ -71,7 +71,7 @@ const EventDetails = () => {
                     experimenting with realistic and innovative designs. The
                     workshop aims to develop artistic skills and boost
                     self-confidence. It concludes with a display of the
-                    children's work and sharing of their artistic experience.
+                    children&apos;s work and sharing of their artistic experience.
                     <br />
                     <br />A fun and interactive workshop where children learn
                     the basics of fashion drawing and each design a unique
@@ -85,7 +85,7 @@ const EventDetails = () => {
                     experimenting with realistic and innovative designs. The
                     workshop aims to develop artistic skills and boost
                     self-confidence. It concludes with a display of the
-                    children's work and sharing of their artistic experience.
+                    children&apos;s work and sharing of their artistic experience.
                     <br />
                     <br />A fun and interactive workshop where children learn
                     the basics of fashion drawing and each design a unique
@@ -99,7 +99,7 @@ const EventDetails = () => {
                     experimenting with realistic and innovative designs. The
                     workshop aims to develop artistic skills and boost
                     self-confidence. It concludes with a display of the
-                    children's work and sharing of their artistic experience.
+                    children&apos;s work and sharing of their artistic experience.
                   </div>
                 </div>
                 <div className="self-stretch h-80 bg-black/20 flex flex-col justify-center items-center gap-4">
