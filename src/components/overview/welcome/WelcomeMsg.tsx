@@ -6,7 +6,7 @@ export default function WelcomeMsg() {
     </div>
     
     <div className="w-[517px] justify-start text-typography-white-64 text-base font-normal font-['GT_America'] leading-tight">
-      You don't yet have an active membership. Click on "Account & Benefits"
+      You don&apos;t yet have an active membership. Click on &quot;Account & Benefits&rdquo;
       to purchase your membership.
     </div>
   </div>

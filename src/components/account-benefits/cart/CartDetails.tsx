@@ -1,7 +1,6 @@
 import React from "react";
-import { X } from "lucide-react";
 import OrderSummary from "@/components/ui/OrderSummery";
-import { paymentIcon } from "@/icons/icons";
+import { cancelButton, paymentIcon } from "@/icons/icons";
 import CheckoutHeader from "@/components/account-benefits/breadcrumb/CheckoutHeader";
 import CheckoutBreadcrum from "@/components/account-benefits/breadcrumb/CheckoutBreadcrumb";
 import {
@@ -10,6 +9,7 @@ import {
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogHeader,
+  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
@@ -152,14 +152,14 @@ const CartDetails = () => {
                 {/* Hidden trigger, not used */}
                 <button style={{ display: "none" }} />
               </AlertDialogTrigger>
+              <AlertDialogTitle >
+                {/* Title can be empty or used for accessibility */}
+                </AlertDialogTitle>
               <AlertDialogContent>
                 <div className="p-10 relative bg-Background-White inline-flex flex-col justify-start items-center gap-9">
                   <div className="flex flex-col justify-start items-center gap-5">
-                    <div className="w-11 h-11 relative overflow-hidden">
-                      <div className="w-3.5 h-2.5 left-[25.67px] top-[26.58px] absolute outline outline-2 outline-offset-[-1px] outline-slate-900" />
-                      <div className="w-[0.02px] h-0.5 left-[10.08px] top-[22.92px] absolute origin-top-left rotate-180 outline outline-2 outline-offset-[-1px] outline-slate-900" />
-                      <div className="w-9 h-7 left-[3.67px] top-[6.42px] absolute outline outline-2 outline-offset-[-1px] outline-slate-900" />
-                      <div className="w-2.5 h-2.5 left-[17.42px] top-[16.50px] absolute outline outline-2 outline-offset-[-1px] outline-slate-900" />
+                    <div className="w-11 h-11 relative">
+                    {paymentIcon()}
                     </div>
                     <div className="w-96 flex flex-col justify-start items-center gap-2">
                       <div className="self-stretch text-center justify-start text-Typography-Black text-4xl font-normal font-['Lyon_Arabic_Display'] capitalize leading-10">
@@ -196,14 +196,13 @@ const CartDetails = () => {
           
                 </div>
                 <AlertDialogCancel asChild>
-                  <button className="absolute right-4 top-4 rounded-full p-1 text-gray-500 hover:text-gray-900 focus:outline-none">
-                    <X className="h-4 w-4" />
+                  <button className="absolute border-none right-4 top-4 p-1 text-gray-500 hover:text-gray-900 focus:outline-none">
+                    {cancelButton()}
                   </button>
                 </AlertDialogCancel>
                 <AlertDialogHeader>
                   <AlertDialogDescription>
                     {/* ...dialog body unchanged... */}
-                   
                   </AlertDialogDescription>
                 </AlertDialogHeader>
               </AlertDialogContent>
