@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - develop
+      - staging
 
 pool:
   name: Shared Agent
@@ -9,7 +9,7 @@ pool:
     - agent.name -equals commonagentvm
 
 variables:
-- group: dev-env-variables
+- group: staging-env-variables
 - name: system.debug
   value: true
 
@@ -17,7 +17,7 @@ stages:
 # Stage 1: Build and Push Docker Image
 - stage: BuildandPushtoDevelopment
   displayName: 'Build and Push Docker Image'
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop')
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/staging')
   jobs:
     - job: BuildAndPushDockerImage
       displayName: 'Build and Push Docker Image'
@@ -34,7 +34,7 @@ stages:
         - task: Docker@2
           displayName: 'Build Docker Image'
           inputs:
-            containerRegistry: 'LODevACRServiceConnection'
+            containerRegistry: 'LOStgACRServiceConnection'
             repository: 'lo-userportal-repository'
             command: 'build'
             Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
@@ -48,7 +48,7 @@ stages:
         - task: Docker@2
           displayName: 'Push Docker Image to ACR'
           inputs:
-            containerRegistry: 'LODevACRServiceConnection'
+            containerRegistry: 'LOStgACRServiceConnection'
             repository: 'lo-userportal-repository'
             command: 'push'
             tags: |
@@ -77,7 +77,7 @@ stages:
 - stage: RestartDeployment
   displayName: 'Restart Deployment'
   dependsOn: BuildandPushtoDevelopment
-  condition: and(eq(variables['Build.SourceBranch'], 'refs/heads/develop'), succeeded())
+  condition: and(eq(variables['Build.SourceBranch'], 'refs/heads/staging'), succeeded())
   jobs:
     - job: Restart_Deployment
       displayName: 'Restart Deployment'
@@ -93,7 +93,7 @@ stages:
           displayName: 'Login to AKS'
           inputs:
             connectionType: 'Azure Resource Manager'
-            azureSubscriptionEndpoint: 'LODevARMServiceConnection'
+            azureSubscriptionEndpoint: 'LOStgARMServiceConnection'
             azureResourceGroup: '$(ResourceGroup)'
             kubernetesCluster: '$(AKS-Cluster)'
             useClusterAdmin: true
