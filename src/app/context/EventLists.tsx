@@ -2,6 +2,7 @@ export const publicEvent = [
   {
     id: 1,
     title: "Signature Cultural Programs by Qatar Creates",
+    category: "Culinary",
     date: "21 Jun, 2025 - 19:00 - 19:30",
     description: "Description for Public Event 1",
     location: "Lynx Tower, Doha. Qatar 1",
@@ -9,6 +10,7 @@ export const publicEvent = [
   {
     id: 2,
     title: "Signature Cultural Programs by Qatar Creates 2",
+    category: "Culinary",
     date: "21 Jun, 2025 - 19:00 - 19:30",
     description: "Description for Public Event 2",
     location: "Lynx Tower, Doha. Qatar 2",
@@ -16,6 +18,7 @@ export const publicEvent = [
   {
     id: 3,
     title: "Signature Cultural Programs by Qatar Creates 3",
+    category: "Culinary",
     date: "21 Jun, 2025 - 19:00 - 19:30",
     description: "Description for Public Event 2",
     location: "Lynx Tower, Doha. Qatar 2",
@@ -23,6 +26,7 @@ export const publicEvent = [
   {
     id: 4,
     title: "Signature Cultural Programs by Qatar Creates 3",
+    category: "Culinary",
     date: "21 Jun, 2025 - 19:00 - 19:30",
     description: "Description for Public Event 2",
     location: "Lynx Tower, Doha. Qatar 2",

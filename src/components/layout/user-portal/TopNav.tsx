@@ -10,6 +10,7 @@ export default function TopNav() {
     setSearchValue(e.target.value);
   };
   return (
+    <>
     <div
       data-color="Purple"
       className="w-full self-stretch h-20 px-7 py-5 bg-Background-Medjool shadow-[0px_2px_4px_0px_rgba(0,0,0,0.06)] border-b border-Stroke-White-20%/20 inline-flex justify-between items-center"
@@ -30,7 +31,7 @@ export default function TopNav() {
             value={SearchValue}
           />
           {/* Search by keyword */}
-        </div>
+         </div>
       </div>
       <div className="flex justify-start items-center gap-5">
         <div className="justify-start text-Typography-White text-base font-medium font-['IBM_Plex_Sans_Arabic'] leading-relaxed">
@@ -51,7 +52,8 @@ export default function TopNav() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+       </div>
+     </div> 
+    </>
   );
 }

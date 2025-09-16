@@ -13,7 +13,7 @@ export default function SidebarMenu() {
   };
   const getIconColor = (menu: string) => (sideMenu === menu ? "#fff" : "#000");
   return (
-    <div>
+    <>
       <div
         data-type="White"
         className="w-72 h-[1893px] pb-3 bg-Background-White border-r border-Stroke-Grey inline-flex flex-col justify-between items-start"
@@ -103,6 +103,6 @@ export default function SidebarMenu() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
