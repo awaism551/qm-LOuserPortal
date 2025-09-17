@@ -26,7 +26,8 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
           See all
         </div>
       </div>
-      <div className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100" id="upcoming-events-container">
+       <ScrollArea className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100" id="upcoming-events-container">
+      {/* <div className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100" id="upcoming-events-container"> */}
         <div className="flex gap-4 py-4">
           {eventlists.map((event, index) => (
             <div
@@ -92,14 +93,14 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
             </div>
           ))}
         </div>
-      </div>
+        <ScrollBar className="h-1" orientation="horizontal" />
+        </ScrollArea>
             <div className="relative w-full flex justify-end items-center gap-2">
               <button
                 className="p-2 outline outline-1 outline-white transition"
                 onClick={() => {
-                  const container = document.querySelector(
-                    "#upcoming-events-container"
-                  ) as HTMLElement;
+                  const container = document
+                    .querySelector("#upcoming-events-container [data-radix-scroll-area-viewport]") as HTMLElement;
                   if (container) container.scrollBy({ left: -300, behavior: "smooth" });
                 }}
                 aria-label="Scroll left"
@@ -110,10 +111,9 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
               <button
                 className="p-2 bg-brand-main  outline outline-1 outline-white transition"
                 onClick={() => {
-              const container = document.querySelector(
-                "#upcoming-events-container"
-              ) as HTMLElement;
-              if (container) container.scrollBy({ left: 300, behavior: "smooth" });
+                  const container = document
+                    .querySelector("#upcoming-events-container [data-radix-scroll-area-viewport]") as HTMLElement;
+                  if (container) container.scrollBy({ left: 300, behavior: "smooth" });
                 }}
                 aria-label="Scroll right"
                 type="button"

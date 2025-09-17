@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 interface PublicEventsProps {
   eventlists: {
@@ -14,7 +15,8 @@ interface PublicEventsProps {
 const PublicEvents: React.FC<PublicEventsProps> = ({ eventlists }) => {
   return (
     <>
-          <div className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+    <ScrollArea className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+          {/* <div className="flex gap-6 w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"> */}
           <div className="flex gap-4 py-4">
           {eventlists.map((event, index) => (
             <div
@@ -98,7 +100,9 @@ const PublicEvents: React.FC<PublicEventsProps> = ({ eventlists }) => {
             </div>
           ))}
         </div>
-      </div>
+        {/* </div> */}
+        <ScrollBar className="h-1" orientation="horizontal" />
+        </ScrollArea>
     </>
   );
 };
