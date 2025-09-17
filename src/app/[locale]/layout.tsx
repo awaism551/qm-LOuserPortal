@@ -51,7 +51,7 @@ export default async function RootLayout({ children, params }: Props) {
               <div>
                 <SidebarMenu />
               </div>
-              <div className="w-full bg-page-main">
+                <div className="w-full h-auto min-h-[1300px] bg-page-main">
                 <div className="w-full">
                   <TopNav />
                 </div>
