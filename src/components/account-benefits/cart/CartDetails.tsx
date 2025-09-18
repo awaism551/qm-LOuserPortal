@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import OrderSummary from "@/components/ui/OrderSummery";
 import { cancelButton, paymentIcon } from "@/icons/icons";
 import CheckoutHeader from "@/components/account-benefits/breadcrumb/CheckoutHeader";
@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/alert-dialog";
 
 const CartDetails = () => {
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [open, setOpen] = useState(false);
   return (
     <div className="w-full bg-Background-Medjool inline-flex flex-col justify-start items-start gap-7 overflow-hidden">
       <CheckoutHeader />
@@ -139,21 +139,11 @@ const CartDetails = () => {
                 </div>
               </div>
             </div>
-            {/* AlertDialog logic */}
-            {/*
-              Move AlertDialog outside so we can control its open state.
-            */}
-            {/* Add state for dialog open */}
-            {/* Add this above return in your component:
-              const [open, setOpen] = React.useState(false);
-            */}
             <AlertDialog open={open} onOpenChange={setOpen}>
               <AlertDialogTrigger asChild>
-                {/* Hidden trigger, not used */}
                 <button style={{ display: "none" }} />
               </AlertDialogTrigger>
               <AlertDialogTitle >
-                {/* Title can be empty or used for accessibility */}
                 </AlertDialogTitle>
               <AlertDialogContent>
                 <div className="p-10 relative bg-Background-White inline-flex flex-col justify-start items-center gap-9">
@@ -193,7 +183,6 @@ const CartDetails = () => {
                       </div>
                     </div>
                   </div>
-          
                 </div>
                 <AlertDialogCancel asChild>
                   <button className="absolute border-none right-4 top-4 p-1 text-gray-500 hover:text-gray-900 focus:outline-none">
@@ -202,7 +191,6 @@ const CartDetails = () => {
                 </AlertDialogCancel>
                 <AlertDialogHeader>
                   <AlertDialogDescription>
-                    {/* ...dialog body unchanged... */}
                   </AlertDialogDescription>
                 </AlertDialogHeader>
               </AlertDialogContent>

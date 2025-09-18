@@ -433,7 +433,7 @@ export const paymentIcon = () => (
       d="M24.5832 16.0833C24.5832 18.6146 22.5311 20.6667 19.9998 20.6667C17.4685 20.6667 15.4165 18.6146 15.4165 16.0833C15.4165 13.552 17.4685 11.5 19.9998 11.5C22.5311 11.5 24.5832 13.552 24.5832 16.0833Z"
       stroke="#141B34"
       stroke-width="2"
-      stroke-linejoin="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -503,7 +503,7 @@ export const cancelButton = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_2597_6694)">
+    <g clipPath="url(#clip0_2597_6694)">
       <path
         d="M4.5 4L20.375 19.875"
         stroke="black"

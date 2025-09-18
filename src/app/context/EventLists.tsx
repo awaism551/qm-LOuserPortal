@@ -189,6 +189,7 @@ export const upcomingEvent = [
 
 export const InsiderBenefits = [
   {
+    id: 1,
     title: "Insider",
     description: "Great for individual person",
     membershipFor: [
@@ -217,6 +218,7 @@ export const InsiderBenefits = [
     ],
   },
   {
+    id: 2,
     title: "Catalyst",
     description: "Great for artists, artisans, teachers",
     price: 200,
@@ -244,6 +246,7 @@ export const InsiderBenefits = [
     ],
   },
   {
+    id: 3,
     title: "Explorers",
     description: "Great for family member",
     price: 500,
@@ -272,6 +275,7 @@ export const InsiderBenefits = [
     ],
   },
   {
+    id: 4,
     title: "Patron",
     description: "Great for family member",
     price: 500,

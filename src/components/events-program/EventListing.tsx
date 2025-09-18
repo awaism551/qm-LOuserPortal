@@ -8,6 +8,7 @@ import { sortOption } from "@/app/context/EventLists";
 import { downArrowIcon, upArrowIcon } from "@/icons/icons";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Eventlisting = () => {
   const [showUpArrow, setShowUpArrow] = useState(false);
@@ -25,7 +26,9 @@ const Eventlisting = () => {
               data-breakpoint="Desktop"
               data-color="Purple BG"
               data-show-right-icon="false"
-              data-status={selectedTab === "All Events" ? "Selected" : "Default"}
+              data-status={
+                selectedTab === "All Events" ? "Selected" : "Default"
+              }
               className={`h-10 px-3 py-1.5 flex justify-center items-center gap-1.5 overflow-hidden ${
                 selectedTab === "All Events"
                   ? "bg-Background-Brand-2"
@@ -33,8 +36,8 @@ const Eventlisting = () => {
               }`}
               onClick={() => setSelectedTab("All Events")}
             >
-               <div className="text-center justify-start text-Typography-White text-sm font-normal font-['GT_America'] leading-tight">
-              All Events
+              <div className="text-center justify-start text-Typography-White text-sm font-normal font-['GT_America'] leading-tight">
+                All Events
               </div>
             </div>
             <div
@@ -50,7 +53,7 @@ const Eventlisting = () => {
               onClick={() => setSelectedTab("Public Events")}
             >
               <div className="text-center justify-start text-Typography-White text-sm font-normal font-['GT_America'] leading-tight">
-              Public Events
+                Public Events
               </div>
             </div>
             <div
@@ -66,7 +69,7 @@ const Eventlisting = () => {
               onClick={() => setSelectedTab("Exclusive Events")}
             >
               <div className="text-center justify-start text-Typography-White text-sm font-normal font-['GT_America'] leading-tight">
-              Exclusive Events
+                Exclusive Events
               </div>
             </div>
           </div>
@@ -83,37 +86,37 @@ const Eventlisting = () => {
                     {/* Up/Down arrow icons */}
                     {showUpArrow ? upArrowIcon() : downArrowIcon()}
                   </DropdownMenuTrigger>
-                <DropdownMenuContent className="mr-10 mt-2">
+                  <DropdownMenuContent className="mr-10 mt-2">
                     <div
-                        data-property-1="Desktop"
-                        className="bg-white inline-flex justify-start items-start gap-1 overflow-hidden"
+                      data-property-1="Desktop"
+                      className="bg-white inline-flex justify-start items-start gap-1 overflow-hidden"
                     >
-                        <div className="flex-1 inline-flex flex-col justify-start items-start gap-1">
-                            {sortOption.map((label, idx) => (
-                                <div
-                                    key={idx}
-                                    data-breakpoint="Desktop"
-                                    data-type="Default"
-                                    className="self-stretch p-2 bg-white inline-flex justify-start items-center gap-1.5"
-                                >
-                                    <input
-                                        type="radio"
-                                        name="event-sort"
-                                        id={`event-sort-${idx}`}
-                                        className="accent-Background-Brand-2"
-                                        defaultChecked={idx === 0}
-                                    />
-                                    <label
-                                        htmlFor={`event-sort-${idx}`}
-                                        className="flex-1 cursor-pointer justify-start text-Button-Background-Text-Black text-base font-normal font-['GT_America'] leading-tight"
-                                    >
-                                        {label}
-                                    </label>
-                                </div>
-                            ))}
-                        </div>
+                      <div className="flex-1 inline-flex flex-col justify-start items-start gap-1">
+                        {sortOption.map((label, idx) => (
+                          <div
+                            key={idx}
+                            data-breakpoint="Desktop"
+                            data-type="Default"
+                            className="self-stretch p-2 bg-white inline-flex justify-start items-center gap-1.5"
+                          >
+                            <input
+                              type="radio"
+                              name="event-sort"
+                              id={`event-sort-${idx}`}
+                              className="accent-Background-Brand-2"
+                              defaultChecked={idx === 0}
+                            />
+                            <label
+                              htmlFor={`event-sort-${idx}`}
+                              className="flex-1 cursor-pointer justify-start text-Button-Background-Text-Black text-base font-normal font-['GT_America'] leading-tight"
+                            >
+                              {label}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                </DropdownMenuContent>
+                  </DropdownMenuContent>
                 </DropdownMenu>
               </div>
             </div>
@@ -131,7 +134,7 @@ const Eventlisting = () => {
             className="w-[350px] h-[466px] flex flex-col justify-start items-start gap-5"
           >
             <div
-               className="w-[351px] h-[300px] relative"
+              className="w-[351px] h-[300px] relative"
               id="event-upcoming-hero-section"
             >
               <div
@@ -147,10 +150,13 @@ const Eventlisting = () => {
               <div className="text-center justify-start text-Typography-White-light text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide">
                 Architecture & Urban
               </div>
+             
               <div className="self-stretch flex flex-col justify-start items-start gap-3">
+              <Link href="/en/designs/events-program/event-details">
                 <div className="w-full self-stretch justify-start text-white text-2xl font-normal font-['Lyon_Arabic_Display'] leading-7">
                   The Power of Storytelling in the Gulf Feild of the world
                 </div>
+                </Link>
                 <div className="self-stretch flex flex-col justify-start items-start gap-2">
                   <div className="self-stretch inline-flex justify-start items-center gap-2">
                     <div className="flex justify-start items-center gap-1">
