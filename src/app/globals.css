@@ -24,6 +24,7 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  
 }
 
 @layer base {
@@ -382,3 +383,29 @@ line-height: 20px; /* 142.857% */
 letter-spacing: 1px;
 text-transform: uppercase;
 }
+.scroll-smooth::-webkit-scrollbar {
+  height: 10px;
+  }
+  .scroll-smooth::-webkit-scrollbar-track {
+  background: transparent;
+  }
+  .scroll-smooth::-webkit-scrollbar-thumb {
+  background-color: rgba(100,100,100,0.35);
+  border-radius: 9999px;
+  }
+  input.round-checkbox:checked::after {
+    content: '✓';
+    display: block;
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1rem; /* match h-4 size */
+  }
+  input.agree-terms::after {
+    content: '✓';
+    display: block;
+    color: white;
+     /* font-size: 0.75rem; */
+    text-align: center; 
+    /* line-height: 1rem; match h-4 size */
+  }

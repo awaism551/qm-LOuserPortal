@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+
 
 import ApolloWrapper from "@/lib/apollo-provider";
 import { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
-import TopNav from "@/components/layout/user-portal/TopNav";
-import SidebarMenu from "@/components/layout/user-portal/SidebarMenu";
+import LeftsideSection from "./LeftsideSection/LeftsideSection";
+import "@/app/globals.css";
 
 interface Props {
   children: ReactNode;
@@ -46,18 +46,10 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
-
-            <div className="flex flex-row">
-              <div>
-                <SidebarMenu />
-              </div>
-                <div className="w-full h-auto min-h-[1300px] bg-page-main">
-                <div className="w-full">
-                  <TopNav />
-                </div>
-                <div>
+            <div className="w-full h-[auto] bg-Background-White inline-flex justify-start items-center">
+              <LeftsideSection />
+              <div className="w-3/4 inline-flex flex-col justify-start items-center overflow-hidden">
                 {children}
-                </div>
               </div>
             </div>
           </ApolloWrapper>

@@ -8,7 +8,7 @@ import MembershipDetails from "@/components/account-benefits/details/MemberDetai
 export default function Page(): React.JSX.Element {
   const [activeTab, setActiveTab] = useState("tab1");
   return (
-    <div className="w-full px-7 pt-7 pb-10 bg-Background-Medjool inline-flex flex-col justify-start items-start gap-7 overflow-hidden">
+    <div className="w-full px-4 sm:px-7 pt-7 pb-10 bg-Background-Medjool grid gap-7 overflow-hidden">
       <GuestBannerMsg />
       <div className="self-stretch border-b border-Stroke-White-20%/20 inline-flex justify-start items-center gap-6">
         <div

@@ -25,7 +25,8 @@ const ScheduleEvents: React.FC<ScheduleEventsProps> = ({ eventlists }) => {
       <div className="self-stretch justify-start text-white text-3xl font-medium font-['Lyon_Arabic_Display'] capitalize leading-10">
         Your Scheduled Events
       </div>
-      <Carousel className="w-full">
+      
+      <Carousel className="w-full grid">
       <CarouselContent>
         {eventlists.map((event, index) => (
           <CarouselItem
@@ -79,9 +80,9 @@ const ScheduleEvents: React.FC<ScheduleEventsProps> = ({ eventlists }) => {
       </CarouselContent>
 
       {/* Left / Right arrows */}
-      <div className="absolute right-10 flex gap-2 p-0 mt-[24px]">
-        <CarouselPrevious className="p-2 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-        <CarouselNext className="p-2 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+      <div className="flex gap-2 absolute bottom-0 right-8 z-10">
+        <CarouselPrevious className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+        <CarouselNext className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
       </div>
     </Carousel>
       
