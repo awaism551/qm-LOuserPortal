@@ -1,11 +1,32 @@
 "use client";
 import React, { use, useState } from "react";
 import { searchIcon, bellIcon, cartIcon } from "@/icons/icons";
+import { usePathname, useRouter } from "next/navigation";
 
  
 
 export default function TopNav() {
   const [SearchValue, setSearchValue] = useState("");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const currentLocale = (pathname?.split("/")[1] || "en") as "en" | "ar";
+
+  const replaceLocaleInPath = (path: string | null, nextLocale: "en" | "ar") => {
+    if (!path) return `/${nextLocale}/designs/overview`;
+    const parts = path.split("/");
+    if (parts.length > 1 && parts[1]) {
+      parts[1] = nextLocale;
+      return parts.join("/") || `/${nextLocale}/designs/overview`;
+    }
+    return `/${nextLocale}${path.startsWith("/") ? path : `/${path}`}`;
+  };
+
+  const onLocaleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const nextLocale = (e.target.value as "en" | "ar");
+    const nextPath = replaceLocaleInPath(pathname, nextLocale);
+    router.push(nextPath);
+  };
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
@@ -33,10 +54,17 @@ export default function TopNav() {
           {/* Search by keyword */}
          </div>
       </div>
-      <div className="flex justify-start items-center gap-5">
-        <div className="justify-start text-Typography-White text-base font-medium font-['IBM_Plex_Sans_Arabic'] leading-relaxed">
-          العربية
-        </div>
+        <div className="flex justify-start items-center gap-5">
+        <button
+          onClick={() => {
+            const nextLocale = currentLocale === "en" ? "ar" : "en";
+            const nextPath = replaceLocaleInPath(pathname, nextLocale);
+            router.push(nextPath);
+          }}
+          className="justify-start text-Typography-White text-base font-medium font-['IBM_Plex_Sans_Arabic'] leading-relaxed cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none outline-none"
+        >
+          {currentLocale === "en" ? "العربية" : "English"}
+        </button>
         <div className="w-6 h-6 relative">{bellIcon()}</div>
         <div className="w-6 h-6 relative">{cartIcon()}</div>
         <div className="flex justify-start items-center gap-3">

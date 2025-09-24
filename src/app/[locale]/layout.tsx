@@ -10,7 +10,7 @@ import SidebarMenu from "@/components/layout/user-portal/SidebarMenu";
 
 interface Props {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 const geistSans = Geist({
@@ -29,13 +29,17 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params;
+  const locale = params?.locale || 'en';
+  console.log("🚀 ~ RootLayout ~ params:", params)
+  console.log("🚀 ~ RootLayout ~ locale:", locale)
 
   // Load translation file directly in the layout
   let messages;
   try {
     messages = (await import(`../locales/${locale}.json`)).default;
-  } catch {
+    console.log("🚀 ~ RootLayout ~ messages:", messages)
+  } catch(error) {
+    console.log("🚀 ~ RootLayout ~ error:", error)
     messages = {}; // fallback if translation not found
   }
 
@@ -51,12 +55,12 @@ export default async function RootLayout({ children, params }: Props) {
               <div>
                 <SidebarMenu />
               </div>
-                <div className="w-full h-auto min-h-[1300px] bg-page-main">
+              <div className="w-full h-auto min-h-[1300px] bg-page-main">
                 <div className="w-full">
                   <TopNav />
                 </div>
                 <div>
-                {children}
+                  {children}
                 </div>
               </div>
             </div>

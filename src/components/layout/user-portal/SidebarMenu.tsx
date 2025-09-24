@@ -9,9 +9,12 @@ import {
 } from "@/icons/icons";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function SidebarMenu() {
   const [sideMenu, setSideMenu] = useState("");
+  const pathname = usePathname();
+  const currentLocale = pathname?.split("/")[1] || "en";
   const getSideMenu = (menu: string) => {
     return sideMenu === menu ? "bg-Background-Brand-2" : "";
   };
@@ -42,7 +45,7 @@ export default function SidebarMenu() {
           </div>
           <div className="self-stretch flex flex-col justify-start items-start gap-2">
             <Link
-              href="/en/designs/overview"
+              href={`/${currentLocale}/designs/overview`}
               className="w-full"
               onClick={() => setSideMenu("overview")}
             >
@@ -59,18 +62,17 @@ export default function SidebarMenu() {
                   {homeIcon(getIconColor("overview"))}
                 </div>
                 <div
-                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${
-                    sideMenu === "overview"
+                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${sideMenu === "overview"
                       ? "text-Typography-White"
                       : "text-Typography-Black"
-                  }`}
+                    }`}
                 >
                   Overview
                 </div>
               </div>
             </Link>
             <Link
-              href="/en/designs/accounts-benefits"
+              href={`/${currentLocale}/designs/accounts-benefits`}
               className="w-full"
               onClick={() => setSideMenu("account")}
             >
@@ -87,18 +89,17 @@ export default function SidebarMenu() {
                   {accountIcon(getIconColor("account"))}
                 </div>
                 <div
-                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${
-                    sideMenu === "account"
+                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${sideMenu === "account"
                       ? "text-Typography-White"
                       : "text-Typography-Black"
-                  }`}
+                    }`}
                 >
                   Account & Benefits
                 </div>
               </div>
             </Link>
             <Link
-              href="/en/designs/events-program"
+              href={`/${currentLocale}/designs/events-program`}
               className="w-full"
               onClick={() => setSideMenu("events")}
             >
@@ -115,18 +116,17 @@ export default function SidebarMenu() {
                   {eventsIcon(getIconColor("events"))}
                 </div>
                 <div
-                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${
-                    sideMenu === "events"
+                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${sideMenu === "events"
                       ? "text-Typography-White"
                       : "text-Typography-Black"
-                  }`}
+                    }`}
                 >
                   Events & Programs
                 </div>
               </div>
             </Link>
             <Link
-              href="/en/designs/help-support"
+              href={`/${currentLocale}/designs/help-support`}
               className="w-full"
               onClick={() => setSideMenu("help")}
             >
@@ -143,11 +143,10 @@ export default function SidebarMenu() {
                   {helpIcon(getIconColor("help"))}
                 </div>
                 <div
-                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${
-                    sideMenu === "help"
+                  className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${sideMenu === "help"
                       ? "text-Typography-White"
                       : "text-Typography-Black"
-                  }`}
+                    }`}
                 >
                   Help & Support
                 </div>

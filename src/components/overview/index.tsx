@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import WelcomeMsg from '@/components/overview/welcome/WelcomeMsg';
 import { publicEvent } from '@/app/context/EventLists';
