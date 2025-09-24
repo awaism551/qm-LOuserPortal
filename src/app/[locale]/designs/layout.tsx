@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import "../../globals.css";
 
 import ApolloWrapper from "@/lib/apollo-provider";
 import { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
+import TopNav from "@/components/layout/user-portal/TopNav";
+import SidebarMenu from "@/components/layout/user-portal/SidebarMenu";
 
 interface Props {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 const geistSans = Geist({
@@ -27,17 +29,13 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  const locale = params?.locale || 'en';
-  console.log("🚀 ~ RootLayout ~ params:", params)
-  console.log("🚀 ~ RootLayout ~ locale:", locale)
+  const { locale } = await params;
 
   // Load translation file directly in the layout
   let messages;
   try {
     messages = (await import(`../locales/${locale}.json`)).default;
-    console.log("🚀 ~ RootLayout ~ messages:", messages)
-  } catch(error) {
-    console.log("🚀 ~ RootLayout ~ error:", error)
+  } catch {
     messages = {}; // fallback if translation not found
   }
 
@@ -48,18 +46,20 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
-
-            <div className="flex flex-row">
-              <div>
+            <div className="flex min-h-screen w-full overflow-x-hidden">
+              {/* Sidebar fixed on the left */}
+              <aside className="w-72 fixed inset-y-0 left-0 z-30 bg-white border-r shadow-sm">
                 <SidebarMenu />
-              </div>
-              <div className="w-full h-auto min-h-[1300px] bg-page-main">
+              </aside>
+              {/* Main content area shifted right by sidebar width */}
+
+              <div className="flex-1 ml-72 min-h-screen bg-page-main">
                 <div className="w-full">
                   <TopNav />
                 </div>
-                <div>
+                <main className="bg-page-main min-h-[1300px] p-6">
                   {children}
-                </div>
+                </main>
               </div>
             </div>
           </ApolloWrapper>

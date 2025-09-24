@@ -303,6 +303,35 @@ export const InsiderBenefits = [
       "Trade Fair & Exhibition Access",
     ],
   },
+  {
+    id: 5,
+    title: "Seeker",
+    description: "Great for family member",
+    price: 500,
+    membershipFor: [
+      "Families: 2 adults + up to 4 children",
+      "Children are below the age of 19",
+      "Can add additional adult & children",
+      "Build community connections",
+    ],
+    benefitlist: [
+      "Digital Membership Card",
+      "Welcome Gift (50 QAR)",
+      "Monthly Insider Newsletter",
+      "Join Insider Networking Hubs",
+      "Invitations to Curated Events",
+      "Insider Networking Sessions",
+      "Family Day & Seasonal Events",
+      "Member-Only Previews",
+      "10% Retail Discount",
+      "Access Culinary Events",
+      "Chef-in-Residence Invitation",
+      "Partner Affiliate Discounts",
+      "Creative Workspace Access",
+      "Knowledge Exchange Access",
+      "Trade Fair & Exhibition Access",
+    ],
+  },
 ];
 
 export const countryDialCodes = [

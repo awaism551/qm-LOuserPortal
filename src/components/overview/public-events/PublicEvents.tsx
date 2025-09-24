@@ -16,7 +16,7 @@ interface PublicEventsProps {
 const PublicEvents: React.FC<PublicEventsProps> = ({ eventlists }) => {
   return (
     <>
-      <Carousel className="w-full">
+      <Carousel className="w-full grid">
             <CarouselContent>
               {eventlists.map((event, index) => (
                 <CarouselItem key={event.id} className="basis-1/3 flex-shrink-0 mr-6">

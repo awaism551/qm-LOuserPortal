@@ -15,14 +15,14 @@ export default function Support(): React.JSX.Element {
 
   return (
     <>
-      <div className="w-[734px] flex flex-col justify-start items-start gap-10">
+      <div className="w-full flex flex-col justify-start items-start gap-10">
         <div className="self-stretch flex flex-col justify-start items-start gap-7">
           <div
             data-breakpoint="Desktop"
             data-color="Purple BG"
             data-right-icon="false"
             data-type="Filled"
-            className="w-[734px] flex flex-col justify-start items-start gap-3"
+            className="w-full flex flex-col justify-start items-start gap-3"
           >
             <div className="self-stretch justify-start">
               <span className="text-Typography-white-64 text-sm font-medium font-['GT_America'] leading-tight">
@@ -52,7 +52,7 @@ export default function Support(): React.JSX.Element {
             data-color="Purple BG"
             data-right-icon="false"
             data-type="Filled"
-            className="w-[734px] flex flex-col justify-start items-start gap-3"
+            className="w-full flex flex-col justify-start items-start gap-3"
           >
             <div className="self-stretch justify-start">
               <span className="text-Typography-white-64 text-sm font-medium font-['GT_America'] leading-tight">

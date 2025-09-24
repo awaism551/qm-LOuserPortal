@@ -13,8 +13,8 @@ export default function OverviewList(): React.JSX.Element {
     <React.Suspense fallback={<div className="flex items-center justify-center h-full text-white text-xl">Loading...</div>}>
       <WelcomeMsg />
      <LazyPublicEvents eventlists={publicEvent} />
-      <LazyScheduledEvents eventlists={scheduleEvent} />
-      <LazyUpcomingEvents eventlists={upcomingEvent} />  
+     <LazyScheduledEvents eventlists={scheduleEvent} />
+     <LazyUpcomingEvents eventlists={upcomingEvent} />   
     </React.Suspense>
   );
 }

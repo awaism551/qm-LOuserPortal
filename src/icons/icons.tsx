@@ -303,7 +303,7 @@ export const logoIcon = () => (
   </svg>
 );
 
-export const rightArrowIcon = () => (
+export const rightArrowIcon = (color = 'white') => (
   <svg
     width="18"
     height="18"
@@ -313,7 +313,7 @@ export const rightArrowIcon = () => (
   >
     <path
       d="M6.75004 4.5L11.25 9.00004L6.75 13.5"
-      stroke="white"
+      stroke={color}
       strokeWidth="1.5"
       strokeMiterlimit="16"
     />
@@ -513,8 +513,8 @@ export const cancelButton = () => (
       <path
         d="M20.5 4L4.625 19.875"
         stroke="black"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
       />
     </g>
     <defs>
@@ -527,5 +527,47 @@ export const cancelButton = () => (
         />
       </clipPath>
     </defs>
+  </svg>
+);
+
+export const infoIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.6654 7.99935C14.6654 4.31745 11.6806 1.33268 7.9987 1.33268C4.3168 1.33268 1.33203 4.31745 1.33203 7.99935C1.33203 11.6812 4.3168 14.666 7.9987 14.666C11.6806 14.666 14.6654 11.6812 14.6654 7.99935Z"
+      stroke="#B0B0B0"
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.9974 6.66536H8.4974V6.16536H7.9974V6.66536ZM7.9974 6.66536H7.4974V11.332H7.9974H8.4974V6.66536H7.9974ZM6.66406 6.66536V7.16536H7.9974V6.66536V6.16536H6.66406V6.66536ZM7.9974 4.33203H7.4974V5.33203H7.9974H8.4974V4.33203H7.9974Z"
+      fill="#B0B0B0"
+    />
+  </svg>
+);
+
+export const eyeIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z"
+      stroke="black"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M12 5C17.5228 5 22 12 22 12C22 12 17.5228 19 12 19C6.47715 19 2 12 2 12C2 12 6.47715 5 12 5Z"
+      stroke="black"
+      strokeWidth="1.5"
+    />
   </svg>
 );

@@ -33,7 +33,7 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
           See all
         </div>
       </div>
-      <Carousel className="w-full">
+      <Carousel className="w-full grid">
         <CarouselContent>
           {eventlists.map((event, index) => (
             <CarouselItem
@@ -105,11 +105,11 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
           ))}
         </CarouselContent>
         {/* Left / Right arrows */}
-      <div className="absolute right-10 flex gap-2 p-0 mt-[24px]">
-        <CarouselPrevious className="p-2 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-        <CarouselNext className="p-2 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+      <div className="flex gap-2 absolute bottom-2 right-8 z-9999 overflow-visible">
+        <CarouselPrevious className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+        <CarouselNext className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
       </div>
-        </Carousel>
+    </Carousel>
     </>
   );
 };

@@ -1,16 +1,26 @@
-// "use client";
-import { redirect } from "next/navigation";
-import { Locale } from 'next-intl';
-type Params = { params: { locale: Locale } };
-export default function Page({params}: Params) { 
-  const { locale } = params || {} as { locale: Locale };
-  if (!locale) {
-    return redirect(`/en/designs/overview`);
-  }
-  return redirect(`/${locale}/designs/overview`);
-}
+import React from 'react';
+import { HeroSection } from '@/components';
 
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'ar' }];
+//import JoinQC from '@/components/join-qc/main';
+import FrameScreen from '@/components/home/join-qc';
+import FindRightMembership from '@/components/home/find-right-membership';
+import BecomeAMember from '@/components/home/become-a-member';
+import StepsToJoin from '@/components/home/steps-to-join';
+import OurPartners from '@/components/home/our-partners';
+import Faqs from '@/components/home/faqs';
+import Footer from '@/components/footer';
+
+export default function Page(): React.JSX.Element {
+  return (
+    <>
+      <HeroSection />
+      <FrameScreen />
+      <FindRightMembership />
+      <BecomeAMember />
+      <StepsToJoin />
+      <OurPartners />
+      <Faqs />
+      <Footer />
+    </>
+  );
 }
