@@ -40,13 +40,10 @@ export default async function RootLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <ApolloWrapper>
-            <div className="flex min-h-screen w-full overflow-x-hidden">
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <ApolloWrapper>
+        <div dir={locale === "ar" ? "rtl" : "ltr"} className={`${geistSans.variable} ${geistMono.variable}`}>
+          <div className="flex min-h-screen w-full overflow-x-hidden">
               {/* Sidebar fixed on the left for LTR, right for RTL */}
               <aside className={`w-72 fixed inset-y-0 z-30 bg-white shadow-sm ${
                 locale === "ar" 
@@ -67,10 +64,9 @@ export default async function RootLayout({ children, params }: Props) {
                   {children}
                 </main>
               </div>
-            </div>
-          </ApolloWrapper>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+          </div>
+        </div>
+      </ApolloWrapper>
+    </NextIntlClientProvider>
   );
 }

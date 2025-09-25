@@ -42,16 +42,12 @@ export default async function RootLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <ApolloWrapper>
-            {children}
-          </ApolloWrapper>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <ApolloWrapper>
+        <div dir={locale === "ar" ? "rtl" : "ltr"} data-locale={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </div>
+      </ApolloWrapper>
+    </NextIntlClientProvider>
   );
 }
