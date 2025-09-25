@@ -36,7 +36,7 @@ export default async function RootLayout({ children, params }: Props) {
   try {
     messages = (await import(`../locales/${locale}.json`)).default;
     console.log("🚀 ~ RootLayout ~ messages:", messages)
-  } catch(error) {
+  } catch (error) {
     console.log("🚀 ~ RootLayout ~ error:", error)
     messages = {}; // fallback if translation not found
   }
@@ -48,20 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
-
-            <div className="flex flex-row">
-              <div>
-                <SidebarMenu />
-              </div>
-              <div className="w-full h-auto min-h-[1300px] bg-page-main">
-                <div className="w-full">
-                  <TopNav />
-                </div>
-                <div>
-                  {children}
-                </div>
-              </div>
-            </div>
+            {children}
           </ApolloWrapper>
         </NextIntlClientProvider>
       </body>

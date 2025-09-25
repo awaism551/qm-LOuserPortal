@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../../globals.css";
 
 import ApolloWrapper from "@/lib/apollo-provider";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import TopNav from "@/components/layout/user-portal/TopNav";
 import SidebarMenu from "@/components/layout/user-portal/SidebarMenu";
@@ -47,13 +47,19 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
             <div className="flex min-h-screen w-full overflow-x-hidden">
-              {/* Sidebar fixed on the left */}
-              <aside className="w-72 fixed inset-y-0 left-0 z-30 bg-white border-r shadow-sm">
+              {/* Sidebar fixed on the left for LTR, right for RTL */}
+              <aside className={`w-72 fixed inset-y-0 z-30 bg-white shadow-sm ${
+                locale === "ar" 
+                  ? "right-0 border-l" 
+                  : "left-0 border-r"
+              }`}>
                 <SidebarMenu />
               </aside>
-              {/* Main content area shifted right by sidebar width */}
+              {/* Main content area shifted by sidebar width */}
 
-              <div className="flex-1 ml-72 min-h-screen bg-page-main">
+              <div className={`flex-1 min-h-screen bg-page-main ${
+                locale === "ar" ? "mr-72" : "ml-72"
+              }`}>
                 <div className="w-full">
                   <TopNav />
                 </div>

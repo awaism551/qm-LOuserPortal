@@ -26,7 +26,11 @@ export default function SidebarMenu() {
     <>
       <div
         data-type="White"
-        className="fixed top-0 left-0 w-72 h-full pb-3 bg-white border-r border-Stroke-Grey inline-flex flex-col justify-between items-start z-50"
+        className={`fixed top-0 w-72 h-full pb-3 bg-white border-Stroke-Grey inline-flex flex-col justify-between items-start z-50 ${
+          currentLocale === "ar" 
+            ? "right-0 border-l" 
+            : "left-0 border-r"
+        }`}
       >
         <div className="self-stretch flex flex-col justify-start items-start gap-6">
           <div className="self-stretch px-6 py-5 border-b border-Stroke-Grey flex flex-col justify-start items-start gap-2.5">
