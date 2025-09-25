@@ -46,12 +46,14 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
-            <div className="w-full h-[auto] bg-Background-White inline-flex justify-start items-center">
+          <div className="w-full h-auto bg-Background-White grid grid-cols-12">
+            <div className="col-span-6 xl:col-span-4 flex justify-start items-center">
               <LeftsideSection />
-              <div className="w-3/4 inline-flex flex-col justify-start items-center overflow-hidden">
-                {children}
-              </div>
             </div>
+            <div className="col-span-6 xl:col-span-8 flex flex-col justify-center items-start h-screen">
+              {children}
+            </div>
+          </div>
           </ApolloWrapper>
         </NextIntlClientProvider>
       </body>

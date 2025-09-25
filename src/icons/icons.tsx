@@ -303,7 +303,7 @@ export const logoIcon = () => (
   </svg>
 );
 
-export const rightArrowIcon = (color = 'white') => (
+export const rightArrowIcon = (color = "white") => (
   <svg
     width="18"
     height="18"
@@ -568,6 +568,18 @@ export const eyeIcon = () => (
       d="M12 5C17.5228 5 22 12 22 12C22 12 17.5228 19 12 19C6.47715 19 2 12 2 12C2 12 6.47715 5 12 5Z"
       stroke="black"
       strokeWidth="1.5"
+    />
+  </svg>
+);
+
+const validationCheckIcon = (valid) => (
+  <svg width="16" height="16" viewBox="0 0 16 16">
+    <circle cx="8" cy="8" r="8" fill={valid ? "#22C55E" : "#D1D5DB"} />
+    <polyline
+      points="4,8 7,11 12,5"
+      fill="none"
+      stroke="white"
+      strokeWidth="0.9"
     />
   </svg>
 );
