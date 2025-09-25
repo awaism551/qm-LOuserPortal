@@ -40,10 +40,6 @@ export default async function RootLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ApolloWrapper>
           <div className="w-full h-auto bg-Background-White grid grid-cols-12">
@@ -56,7 +52,5 @@ export default async function RootLayout({ children, params }: Props) {
           </div>
           </ApolloWrapper>
         </NextIntlClientProvider>
-      </body>
-    </html>
   );
 }

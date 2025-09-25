@@ -1,3 +1,4 @@
+"use client";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "User Portal",
   description: "Learning Outreach User Portal",
 };
