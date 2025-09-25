@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 
 interface Props {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 const geistSans = Geist({
@@ -27,25 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params;
+  const locale = params?.locale || 'en';
+  console.log("🚀 ~ RootLayout ~ params:", params)
+  console.log("🚀 ~ RootLayout ~ locale:", locale)
 
   // Load translation file directly in the layout
   let messages;
   try {
     messages = (await import(`../locales/${locale}.json`)).default;
-  } catch {
+    console.log("🚀 ~ RootLayout ~ messages:", messages)
+  } catch (error) {
+    console.log("🚀 ~ RootLayout ~ error:", error)
     messages = {}; // fallback if translation not found
   }
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <ApolloWrapper>{children}</ApolloWrapper>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <ApolloWrapper>
+        <div dir={locale === "ar" ? "rtl" : "ltr"} data-locale={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </div>
+      </ApolloWrapper>
+    </NextIntlClientProvider>
   );
 }
