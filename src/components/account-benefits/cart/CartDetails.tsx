@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import OrderSummary from "@/components/ui/OrderSummery";
-import { cancelButton, paymentIcon } from "@/icons/icons";
 import CheckoutHeader from "@/components/account-benefits/breadcrumb/CheckoutHeader";
 import CheckoutBreadcrum from "@/components/account-benefits/breadcrumb/CheckoutBreadcrumb";
+import SimpleAlertPopup from "@/components/alert-popup/SimpleAlertPopup";
+import { paymentIcon } from "@/icons/icons";
 import {
-  AlertDialog,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  paymentHeading as Heading,
+  paymentDescription as Description,
+  paymentButtonText as buttonText,
+  paymentButtonURL as buttonURL,
+} from "@/app/context/Constant";
 
 const CartDetails = () => {
   const [firstName, setFirstName] = useState("");
@@ -139,62 +137,17 @@ const CartDetails = () => {
                 </div>
               </div>
             </div>
-            <AlertDialog open={open} onOpenChange={setOpen}>
-              <AlertDialogTrigger asChild>
-                <button style={{ display: "none" }} />
-              </AlertDialogTrigger>
-              <AlertDialogTitle >
-                </AlertDialogTitle>
-              <AlertDialogContent>
-                <div className="p-10 relative bg-Background-White inline-flex flex-col justify-start items-center gap-9">
-                  <div className="flex flex-col justify-start items-center gap-5">
-                    <div className="w-11 h-11 relative">
-                    {paymentIcon()}
-                    </div>
-                    <div className="w-96 flex flex-col justify-start items-center gap-2">
-                      <div className="self-stretch text-center justify-start text-Typography-Black text-4xl font-normal font-['Lyon_Arabic_Display'] capitalize leading-10">
-                        Payment Successful
-                      </div>
-                      <div className="self-stretch text-center justify-start">
-                        <span className="text-Typography-Grey-700 text-sm font-normal font-['GT_America'] leading-tight">
-                          Thank you for joining Qatar Creates.{" "}
-                        </span>
-                        <span className="text-Typography-Black text-sm font-medium font-['GT_America'] leading-tight">
-                          Your membership is now active
-                        </span>
-                        <span className="text-Typography-Grey-700 text-sm font-normal font-['GT_America'] leading-tight">
-                          , and your benefits are ready to explore.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="inline-flex justify-start items-center gap-4">
-                    <div
-                      data-icon-placeholder="false"
-                      data-size="sm"
-                      data-state="Default 1"
-                      data-type="Primary"
-                      className="outline outline-1 outline-offset-[-1px] outline-Button-Background-Stroke-56%/60 flex justify-start items-center"
-                    >
-                      <div className="h-10 px-5 py-3 bg-Button-Background-Default flex justify-center items-center gap-2.5 overflow-hidden">
-                        <div className="text-center justify-start text-white text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide">
-                          Go to your overview
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <AlertDialogCancel asChild>
-                  <button className="absolute border-none right-4 top-4 p-1 text-gray-500 hover:text-gray-900 focus:outline-none">
-                    {cancelButton()}
-                  </button>
-                </AlertDialogCancel>
-                <AlertDialogHeader>
-                  <AlertDialogDescription>
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-              </AlertDialogContent>
-            </AlertDialog>
+            <SimpleAlertPopup
+              open={open}
+              onOpenChange={setOpen}
+              content={{
+                icon: paymentIcon(),
+                Heading,
+                Description,
+                buttonText,
+                buttonURL,
+              }}
+            />
             <OrderSummary
               details={[
                 { label: "Membership Tier:", value: "Explorer" },

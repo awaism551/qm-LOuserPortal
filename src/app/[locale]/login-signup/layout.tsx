@@ -46,7 +46,7 @@ export default async function RootLayout({ children, params }: Props) {
             <div className="col-span-6 xl:col-span-4 flex justify-start items-center">
               <LeftsideSection />
             </div>
-            <div className="col-span-6 xl:col-span-8 flex flex-col justify-center items-start h-screen">
+            <div className="col-span-6 xl:col-span-8 flex flex-col justify-center items-start">
               {children}
             </div>
           </div>

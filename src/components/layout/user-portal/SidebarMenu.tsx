@@ -4,13 +4,18 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { userMenu } from "./Menu";
+import { userMenu, userMenuAftrPurchase } from "./Menu";
 import { logout } from "@/icons/icons";
 
-export default function SidebarMenu() {
+type SidebarMenuProps = {
+  isLoggedIn: boolean;
+};
+
+export default function SidebarMenu({ isLoggedIn }: SidebarMenuProps) {
   const [sideMenu, setSideMenu] = useState("");
   const pathname = usePathname();
   const currentLocale = pathname?.split("/")[1] || "en";
+  const menus = isLoggedIn ? userMenuAftrPurchase : userMenu;
   const getSideMenu = (menu: string) => {
     return sideMenu === menu ? "bg-Background-Brand-2" : "";
   };
@@ -44,7 +49,39 @@ export default function SidebarMenu() {
             </div>
           </div>
           <div className="self-stretch flex flex-col justify-start items-start gap-2">
-            {userMenu.map((menu) => (
+           
+            {menus.map((menu) => (
+              <Link
+              key={menu.id}
+              href={menu.href}
+              className="w-full"
+              onClick={() => setSideMenu(menu.name)}
+              >
+              <div
+                data-breakpoint="Desktop"
+                data-property-1={
+                sideMenu === menu.name ? "Final Selected" : "Final Default"
+                }
+                className={`w-full self-stretch h-10 px-5 py-2.5 ${getSideMenu(
+                menu.name
+                )} inline-flex justify-start items-center gap-2.5`}
+              >
+                <div className="w-4 h-5 relative">
+                {menu.icon(getIconColor(menu.name))}
+                </div>
+                <div
+                className={`flex-1 justify-start text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight ${
+                  sideMenu === menu.name
+                  ? "text-Typography-White"
+                  : "text-Typography-Black"
+                }`}
+                >
+                {menu.title}
+                </div>
+              </div>
+              </Link>
+            ))}
+            {/* {userMenu.map((menu) => (
               <Link
                 key={menu.id}
                 href={menu.href}
@@ -74,7 +111,7 @@ export default function SidebarMenu() {
                   </div>
                 </div>
               </Link>
-            ))}
+            ))} */}
             {/* <Link
           href="/en/designs/overview"
           className="w-full"
