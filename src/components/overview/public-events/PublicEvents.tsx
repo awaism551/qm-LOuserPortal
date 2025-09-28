@@ -14,20 +14,38 @@ interface PublicEventsProps {
 }
 
 const PublicEvents: React.FC<PublicEventsProps> = ({ eventlists }) => {
+  console.log("🚀 ~ PublicEvents ~ eventlists:", eventlists)
   return (
     <>
-      <Carousel className="w-full grid">
-        <CarouselContent>
+      <Carousel
+        className="w-full"
+        opts={{
+          align: "start",
+          slidesToScroll: 1,
+          containScroll: "trimSnaps"
+        }}
+      >
+        <CarouselContent className="flex gap-6">
           {eventlists.map((event, index) => (
-            <CarouselItem key={event.id} className="basis-1/3 flex-shrink-0 mr-6">
+            <CarouselItem key={event.id} className="flex-shrink-0 max-w-[510px]">
               <div
                 key={index}
-                className="flex-shrink-0 pb-6 flex-col justify-end items-start gap-2.5" // Added w-1/3 for 3 items per view
+                className="flex-shrink-0 flex-col justify-end items-start gap-2.5"
+                style={{
+                  width: '510px',
+                  height: '305px'
+                }}
               >
                 <div
                   data-breakpoint="Desktop"
-                  className="px-5 pt-36 pb-6 relative bg-gradient-to-b from-black/0 to-black/80 flex flex-col justify-end items-start gap-2.5"
+                  className="relative bg-gradient-to-b from-black/0 to-black/80 flex flex-col justify-end items-start gap-2.5 bg-cover bg-center bg-no-repeat"
                   id="event-public-hero-section"
+                  style={{
+                    backgroundImage: "url('/images/public-event.png')",
+                    width: '510px',
+                    height: '305px',
+                    padding: '152px 20px 24px 20px'
+                  }}
                 >
                   <div className="self-stretch justify-end items-end gap-40">
                     <div className="flex-1 flex-col justify-start items-start gap-3">
