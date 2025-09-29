@@ -1,3 +1,5 @@
+import { cardIcon, earlyBirdsIcon, newsletterIcon, welcomeIcon } from "@/icons/icons";
+
 export const publicEvent = [
   {
     id: 1,
@@ -426,3 +428,42 @@ export const countryDialCodes = [
   { code: "+976", country: "Mongolia" },
   { code: "+977", country: "Nepal" },
 ];
+
+export const benefitsList = [
+  {
+    id: 1,
+    title: "Digital Membership Card",
+    description:
+      "Instantly access your membership with your e-card from the dashboard or email.",
+    icon: cardIcon(),
+    buttonText: "Add to Wallet",
+    badges:[ "ONE PER MEMBERSHIP", "INCLUDED" ]
+  },
+  {
+    id: 2,
+    title: "WELCOME GIFT (50 QAR)",
+    description:
+      "Claim your one-time welcome gift worth up to 50 QAR using your Flash e-card.",
+    icon: welcomeIcon(),
+    buttonText: "Redeem Gift",
+    badges:[ "One-time redeem" ]
+  },
+  {
+    id: 3,
+    title: "Early Bird Tickets",
+    description:
+      "Enjoy priority booking for Qatar Creates events before they go public.",
+    icon: earlyBirdsIcon(),
+    buttonText: "View Events",
+    badges:[ "All year round", "Priority booking"]
+  },
+  {
+    id: 4,
+    title: "Monthly Insider Newsletter",
+    description:
+      "Get cultural updates, upcoming events, and special member-only news in your inbox every month.",
+    icon: newsletterIcon(),
+    buttonText: "Read Latest Issue",
+    badges:[ "Monthly", "Insider Updates"]
+  },
+]
