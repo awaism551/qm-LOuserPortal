@@ -44,7 +44,7 @@ export default async function RootLayout({ children, params }: Props) {
     <NextIntlClientProvider messages={messages} locale={locale}>
       <ApolloWrapper>
         <div dir={locale === "ar" ? "rtl" : "ltr"} className={`${geistSans.variable} ${geistMono.variable}`}>
-          <div className="flex min-h-screen w-full overflow-x-hidden">
+          <div className="min-h-screen w-full overflow-x-hidden">
               {/* Sidebar fixed on the left for LTR, right for RTL */}
               <aside className={`w-72 fixed inset-y-0 z-30 bg-white shadow-sm ${
                 locale === "ar" 
