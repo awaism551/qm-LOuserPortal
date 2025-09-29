@@ -232,6 +232,50 @@ function CarouselNext({
   )
 }
 
+function CarouselProgress({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  const { api } = useCarousel()
+  const [progress, setProgress] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) return
+
+    const onSelect = () => {
+      const scrollSnaps = api.scrollSnapList()
+      const selectedIndex = api.selectedScrollSnap()
+      const totalSnaps = scrollSnaps.length
+      
+      if (totalSnaps > 0) {
+        setProgress((selectedIndex + 1) / totalSnaps)
+      }
+    }
+
+    onSelect()
+    api.on("select", onSelect)
+
+    return () => {
+      api.off("select", onSelect)
+    }
+  }, [api])
+
+  return (
+    <div
+      className={cn(
+        "w-full h-1 bg-white/20 rounded-full overflow-hidden",
+        className
+      )}
+      {...props}
+    >
+      <div
+        className="h-full bg-white transition-all duration-300 ease-out"
+        style={{ width: `${progress * 100}%` }}
+      />
+    </div>
+  )
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -239,4 +283,6 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselProgress,
+  useCarousel,
 }

@@ -7,6 +7,7 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselProgress,
 } from "@/components/ui/carousel";
 
 type Event = {
@@ -104,11 +105,14 @@ const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ eventlists }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* Left / Right arrows */}
-      <div className="flex gap-2 absolute bottom-2 right-8 z-9999 overflow-visible">
-        <CarouselPrevious className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-        <CarouselNext className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-      </div>
+        {/* Progress bar and navigation */}
+        <div className="flex items-center justify-between z-10">
+          <CarouselProgress className="w-6/7 h-1" />
+          <div className="flex mt-8 mr-12">
+            <CarouselPrevious className="left-8 relative p-2 outline outline-1 outline-white rounded-none bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+            <CarouselNext className="relative p-2 outline outline-1 outline-white rounded-none bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+          </div>
+        </div>
     </Carousel>
     </>
   );

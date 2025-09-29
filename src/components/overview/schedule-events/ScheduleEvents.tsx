@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselProgress,
 } from "@/components/ui/carousel";
-import { rightArrowIcon, leftArrowIcon } from "@/icons/icons";
 
 interface ScheduleEventsProps {
   eventlists: {
@@ -25,67 +24,70 @@ const ScheduleEvents: React.FC<ScheduleEventsProps> = ({ eventlists }) => {
       <div className="self-stretch justify-start text-white text-3xl font-medium font-['Lyon_Arabic_Display'] capitalize leading-10">
         Your Scheduled Events
       </div>
-      
-      <Carousel className="w-full grid">
-      <CarouselContent>
-        {eventlists.map((event, index) => (
-          <CarouselItem
-            key={index}
-            className="flex-shrink-0 mr-[24px] pl-0" // 👈 4 per slide + spacing
-          >
-            <div
-              data-breakpoint="Desktop"
-              data-color="Purple BG"
-              className="flex flex-col"
-            >
-              {/* Card top (date badge over hero) */}
-              <div className="h-72 relative" id="event-schedule-hero-section">
-                <div className="w-20 absolute top-4 left-4 p-2 bg-white gap-1.5">
-                  <div className="text-black text-3xl font-normal font-['Lyon_Arabic_Display'] capitalize leading-9">
-                    {event.date.split(" - ")[0]}
-                  </div>
-                  <div className="h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-Grey"></div>
-                  <div className="text-Typography-Grey-500 text-xs font-normal font-['GT_America'] leading-none">
-                    {event.date.split(" - ")[1]}
-                  </div>
-                </div>
-              </div>
 
-              {/* Card bottom */}
-              <div className="flex flex-col justify-start items-start gap-5 mt-5">
-                <div className="text-Typography-White-64 text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide">
-                  {event.category}
-                </div>
-                <div className="flex flex-col gap-3">
-                  <div className="text-Typography-White text-2xl font-light font-['Lyon_Arabic_Display'] leading-7 break-words whitespace-pre-line max-w-[18rem]">
-                    {event.title}
+      <Carousel className="w-full grid">
+        <CarouselContent className="mb-8">
+          {eventlists.map((event, index) => (
+            <CarouselItem
+              key={index}
+              className="flex-shrink-0 mr-[24px] pl-0" // 👈 4 per slide + spacing
+            >
+              <div
+                data-breakpoint="Desktop"
+                data-color="Purple BG"
+                className="flex flex-col"
+              >
+                {/* Card top (date badge over hero) */}
+                <div className="h-72 relative" id="event-schedule-hero-section">
+                  <div className="w-20 absolute top-4 left-4 p-2 bg-white gap-1.5">
+                    <div className="text-black text-3xl font-normal font-['Lyon_Arabic_Display'] capitalize leading-9">
+                      {event.date.split(" - ")[0]}
+                    </div>
+                    <div className="h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-Grey"></div>
+                    <div className="text-Typography-Grey-500 text-xs font-normal font-['GT_America'] leading-none">
+                      {event.date.split(" - ")[1]}
+                    </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div
-                      data-type="Secondary"
-                      className="flex-1 outline outline-1 outline-offset-[-1px] outline-Stroke-White flex justify-center items-center"
-                    >
-                      <div className="h-11 px-5 py-3 flex justify-center items-center">
-                        <div className="text-white text-base font-normal font-['GT_America'] uppercase">
-                          download tickets
+                </div>
+
+                {/* Card bottom */}
+                <div className="flex flex-col justify-start items-start gap-5 mt-5">
+                  <div className="text-Typography-White-64 text-sm font-normal font-['GT_America'] uppercase leading-tight tracking-wide">
+                    {event.category}
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className="text-Typography-White text-2xl font-light font-['Lyon_Arabic_Display'] leading-7 break-words whitespace-pre-line max-w-[18rem]">
+                      {event.title}
+                    </div>
+                    <div className="flex gap-3">
+                      <div
+                        data-type="Secondary"
+                        className="flex-1 outline outline-1 outline-offset-[-1px] outline-Stroke-White flex justify-center items-center"
+                      >
+                        <div className="h-11 px-5 py-3 flex justify-center items-center">
+                          <div className="text-white text-base font-normal font-['GT_America'] uppercase">
+                            download tickets
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
 
-      {/* Left / Right arrows */}
-      <div className="flex gap-2 absolute bottom-0 right-8 z-10">
-        <CarouselPrevious className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-        <CarouselNext className="p-2 mt-8 outline outline-1 outline-white rounded bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
-      </div>
-    </Carousel>
-      
+
+        {/* Progress bar and navigation */}
+        <div className="flex items-center justify-between z-10">
+          <CarouselProgress className="w-6/7 h-1" />
+          <div className="flex mt-8 mr-12">
+            <CarouselPrevious className="left-8 relative p-2 outline outline-1 outline-white rounded-none bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+            <CarouselNext className="relative p-2 outline outline-1 outline-white rounded-none bg-transparent text-white hover:bg-brand-main hover:text-white transition-colors" />
+          </div>
+        </div>
+      </Carousel>
     </>
   );
 };
