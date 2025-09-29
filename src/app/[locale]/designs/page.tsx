@@ -1,9 +1,10 @@
 // "use client";
 import { redirect } from "next/navigation";
 import { Locale } from 'next-intl';
-type Params = { params: { locale: Locale } };
-export default function Page({params}: Params) {
-    const { locale } = params || {} as { locale: Locale };
+type Params = { params: Promise<{ locale: string }> };
+export default async function Page({params}: Params) {
+
+    const { locale } = await params;
     if (!locale) {
       return redirect(`/en/designs/overview`);
     }

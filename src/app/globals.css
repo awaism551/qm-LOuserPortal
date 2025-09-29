@@ -400,7 +400,7 @@ text-transform: uppercase;
     color: white;
     font-size: 0.75rem;
     text-align: center;
-    line-height: 1rem; /* match h-4 size */
+    line-height: 1.3rem; /* match h-4 size */
   }
   input.agree-terms::after {
     content: '✓';
