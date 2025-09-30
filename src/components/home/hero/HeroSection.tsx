@@ -16,11 +16,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       data-layer="Hero Section"
       id={id}
       className={`HeroSection relative w-full min-h-[900px] overflow-hidden ${className}`}
-      style={{
-        background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 12.38%, rgba(0, 0, 0, 0.80) 75.15%)'
-      }}
     >
-      {/* Background image will be applied via CSS in globals.css for #header-hero-section */}
+      {/* Background image is applied via CSS in globals.css for #header-hero-section */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/0 via-black/30 to-black/80" />
       <div className="relative z-10 flex flex-col h-full min-h-[900px]">
         <TopNavigation />
         <HeroContent />
