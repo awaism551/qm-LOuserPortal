@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 
 interface Props {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 const geistSans = Geist({
@@ -27,18 +27,15 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params || { locale: 'en' };
-  console.log("🚀 ~ RootLayout ~ params:", params)
-  console.log("🚀 ~ RootLayout ~ locale:", locale)
+  const { locale } = params || { locale: 'en' };
 
   // Load translation file directly in the layout
-  let messages;
+  let messages: Record<string, string> = {};
   try {
     messages = (await import(`../locales/${locale}.json`)).default;
-    console.log("🚀 ~ RootLayout ~ messages:", messages)
   } catch (error) {
-    console.log("🚀 ~ RootLayout ~ error:", error)
-    messages = {}; // fallback if translation not found
+    // Fallback to empty messages if locale file missing
+    messages = {};
   }
 
   return (
