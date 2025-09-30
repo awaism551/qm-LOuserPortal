@@ -7,15 +7,24 @@ interface HeroSectionProps {
   id?: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ 
+const HeroSection: React.FC<HeroSectionProps> = ({
   className = "",
   id = "header-hero-section"
 }) => {
   return (
-    <div data-layer="Hero Section" id={id} className={`HeroSection self-stretch h-[900px] relative bg-Background-White overflow-hidden ${className}`}>
-      <div data-layer="Qatar Headef Video 1" className="QatarHeadefVideo1 h-[900px] left-0 top-0 absolute bg-gradient-to-b from-black/0 from 16% to-black/80" />
-      <TopNavigation />
-      <HeroContent />
+    <div
+      data-layer="Hero Section"
+      id={id}
+      className={`HeroSection relative w-full min-h-[900px] overflow-hidden ${className}`}
+      style={{
+        background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 12.38%, rgba(0, 0, 0, 0.80) 75.15%)'
+      }}
+    >
+      {/* Background image will be applied via CSS in globals.css for #header-hero-section */}
+      <div className="relative z-10 flex flex-col h-full min-h-[900px]">
+        <TopNavigation />
+        <HeroContent />
+      </div>
     </div>
   );
 };
