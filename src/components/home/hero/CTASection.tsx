@@ -7,7 +7,7 @@ interface CTASectionProps {
 
 const CTASection: React.FC<CTASectionProps> = ({ className = "" }) => {
   return (
-    <div data-layer="CTA" className={`Cta size- flex justify-start items-center gap-5 bg-white/20 ${className}`}>
+    <div data-layer="CTA" className={`Cta flex justify-center items-center w-full lg:w-auto ${className}`}>
       <CTAButton />
     </div>
   );
