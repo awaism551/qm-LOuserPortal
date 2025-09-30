@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       className={`HeroSection relative w-full min-h-[900px] overflow-hidden ${className}`}
     >
       {/* Background image is applied via CSS in globals.css for #header-hero-section */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/0 via-black/30 to-black/80" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/0 via-black/30 to-black/80 pointer-events-none" />
       <div className="relative z-10 flex flex-col h-full min-h-[900px]">
         <TopNavigation />
         <HeroContent />
