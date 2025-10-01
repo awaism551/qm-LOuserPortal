@@ -19,7 +19,6 @@ const eventData = [
     title: "Doha Jewelry & Watches Exhibition",
     time: "19:00 - 19:30",
     location: "Lynx Tower, Doha. Qatar",
-    hasViewDetails: false,
   },
   {
     id: 2,
@@ -28,7 +27,6 @@ const eventData = [
     title: "Qatar International Food Festival",
     time: "19:00 - 19:30",
     location: "Lynx Tower, Doha. Qatar",
-    hasViewDetails: true,
   },
   {
     id: 3,
@@ -37,7 +35,6 @@ const eventData = [
     title: "Qatar International Art Festival",
     time: "19:00 - 19:30",
     location: "Lynx Tower, Doha. Qatar",
-    hasViewDetails: false,
   },
   {
     id: 4,
@@ -46,7 +43,6 @@ const eventData = [
     title: "Ajyal Film Festival",
     time: "19:00 - 19:30",
     location: "Lynx Tower, Doha. Qatar",
-    hasViewDetails: false,
   },
 ];
 
