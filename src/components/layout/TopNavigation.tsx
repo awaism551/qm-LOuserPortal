@@ -13,14 +13,14 @@ const TopNavigation: React.FC<TopNavigationProps> = ({ className = "" }) => {
   const pathname = usePathname();
   const currentLocale: 'en' | 'ar' = (pathname?.split('/')?.[1] === 'ar') ? 'ar' : 'en';
   return (
-    <div data-layer="Top Nav" data-property-1="Default" className={`TopNav w-full px-4 md:px-8 lg:px-14 py-5 left-0 top-0 absolute inline-flex justify-between items-center ${className}`}>
-      <div data-layer="Logo & Menu" className="LogoMenu size- flex justify-start items-center gap-14">
+    <div data-layer="Top Nav" data-property-1="Default" className={`TopNav w-full px-4 md:px-8 lg:px-15 py-5 left-0 top-0 absolute inline-flex justify-between items-center ${className}`}>
+      <div data-layer="Logo & Menu" className="LogoMenu flex justify-start items-center gap-14">
         <Logo />
       </div>
-      <div data-layer="Frame 2131336071" className="Frame2131336071 size- flex justify-start items-center gap-7">
+      <div className="flex justify-start items-center gap-7.5">
         <LanguageSelector currentLanguage={currentLocale} currentUrl={pathname || '/'} />
-        <div data-layer="Search & CTA" className="SearchCta size- flex justify-start items-center gap-3">
-          <div data-layer="Component 4" data-icon-placeholder="false" data-size="lg" data-state="Default 2" data-type="Primary" className="Component4 size- outline outline-1 outline-offset-[-1px] outline-Button-Background-Stroke-56%/60 flex justify-start items-center">
+        <div data-layer="Search & CTA" className="SearchCta flex justify-start items-center gap-3">
+          <div data-layer="Component 4" data-icon-placeholder="false" data-size="lg" data-state="Default 2" data-type="Primary" className="Component4 flex justify-start items-center">
             <LoginButton />
           </div>
         </div>
