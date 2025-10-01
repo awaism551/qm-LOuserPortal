@@ -202,7 +202,7 @@ export default function EventHighlightsSection() {
             <div className="absolute left-0 top-[1px] w-full max-w-[604px] h-[1px] bg-black" />
           </div>
 
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-[12px] flex-shrink-0">
             <button
               className="w-11 h-11 p-3 px-5 border border-black flex items-center justify-center"
               aria-label="Previous"
