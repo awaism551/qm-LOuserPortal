@@ -408,6 +408,10 @@ text-transform: uppercase;
     display: block;
     color: white;
      /* font-size: 0.75rem; */
-    text-align: center; 
+    text-align: center;
     /* line-height: 1rem; match h-4 size */
   }
+
+  /* Hide scrollbars utility */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

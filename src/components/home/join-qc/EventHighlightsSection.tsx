@@ -71,7 +71,7 @@ export default function EventHighlightsSection() {
       </div>
 
       <div className="flex flex-col items-start gap-[60px] w-full">
-        <div className="flex items-start gap-5 overflow-x-auto w-full">
+        <div className="flex items-start gap-5 overflow-x-auto no-scrollbar w-full">
           {eventData.map((event) => (
             <Card
               key={event.id}
