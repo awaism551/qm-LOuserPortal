@@ -41,7 +41,7 @@ export default async function RootLayout(props: Props) {
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
       <ApolloWrapper>
-        <div dir={locale === "ar" ? "rtl" : "ltr"} data-locale={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+        <div dir={locale === "ar" ? "rtl" : "ltr"} data-locale={locale} className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}>
           {props.children}
         </div>
       </ApolloWrapper>
