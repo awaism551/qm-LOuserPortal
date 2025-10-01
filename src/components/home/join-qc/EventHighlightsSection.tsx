@@ -197,25 +197,43 @@ export default function EventHighlightsSection() {
           ))}
         </div>
 
-        <div className="flex items-center gap-10 md:gap-20 w-full">
-          <div className="flex-1 h-[0.5px] relative">
-            <div className="absolute left-0 top-0 w-full h-[0.5px] bg-[#E7E7E7]" />
-            <div className="absolute left-0 top-0 w-full max-w-[604px] h-[1px] bg-black" />
+        <div className="flex items-center gap-20 w-full">
+          <div className="flex-1 max-w-[1140px] h-[0.5px] relative">
+            <div className="absolute left-0 top-0 w-full h-0 bg-[#E7E7E7]" style={{ borderTop: '0.5px solid #E7E7E7' }} />
+            <div className="absolute left-0 top-[1px] w-full max-w-[604px] h-0 bg-black" style={{ borderTop: '1px solid #000' }} />
           </div>
 
           <div className="flex items-center gap-3 flex-shrink-0">
             <button
-              className="w-11 h-11 border border-black flex items-center justify-center"
+              className="w-11 h-11 p-3 px-5 border border-black flex items-center justify-center"
               aria-label="Previous"
             >
-              <ArrowLeft className="w-6 h-6 stroke-black" strokeWidth="1.5" />
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+              >
+                <path d="M15 6L9 12L15 18" stroke="black" strokeWidth="1.5" strokeMiterlimit="16"/>
+              </svg>
             </button>
 
             <button
-              className="w-11 h-11 bg-[#FF536D] flex items-center justify-center"
+              className="w-11 h-11 p-3 px-5 bg-[#FF536D] flex items-center justify-center"
               aria-label="Next"
             >
-              <ArrowRight className="w-6 h-6 stroke-white" strokeWidth="1.5" />
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+              >
+                <path d="M9.00005 6L15 12L9 18" stroke="white" strokeWidth="1.5" strokeMiterlimit="16"/>
+              </svg>
             </button>
           </div>
         </div>
