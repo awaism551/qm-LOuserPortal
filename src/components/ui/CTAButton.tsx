@@ -19,7 +19,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       data-size="lg"
       data-state="Default 1"
       data-type="Tertiary"
-      className={`Component5 inline-flex outline outline-1 outline-offset-[-1px] outline-white/60 rounded-lg overflow-hidden ${className}`}
+      className={`Component5 inline-flex max-w-full outline outline-1 outline-offset-[-1px] outline-white/60 rounded-lg overflow-hidden ${className}`}
     >
       <div data-layer="Button" className="Button h-10 md:h-12 px-3 md:px-5 py-2 md:py-3 bg-white/20 backdrop-blur-xl flex justify-center items-center gap-2.5">
         <span
