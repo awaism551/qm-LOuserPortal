@@ -198,8 +198,8 @@ export default function EventHighlightsSection() {
 
         <div className="flex items-center gap-20 w-full">
           <div className="flex-1 max-w-[1140px] h-[0.5px] relative">
-            <div className="absolute left-0 top-0 w-full h-0 bg-[#E7E7E7]" style={{ borderTop: '0.5px solid #E7E7E7' }} />
-            <div className="absolute left-0 top-[1px] w-full max-w-[604px] h-0 bg-black" style={{ borderTop: '1px solid #000' }} />
+            <div className="absolute left-0 top-0 w-full h-[0.5px] bg-[#E7E7E7]" />
+            <div className="absolute left-0 top-[1px] w-full max-w-[604px] h-[1px] bg-black" />
           </div>
 
           <div className="flex items-center gap-3 flex-shrink-0">
