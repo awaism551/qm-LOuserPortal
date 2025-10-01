@@ -55,19 +55,25 @@ const eventData = [
 export default function EventHighlightsSection() {
   return (
     <section className="flex flex-col items-start gap-10 w-full">
-      <div className="flex items-center gap-3 px-0 py-5 border-t border-b border-dashed border-[#b0b0b066] overflow-hidden">
-        <div className="flex items-center gap-3 animate-scroll">
-          {bannerItems.map((item, index) => (
-            <React.Fragment key={index}>
-              <span className="[font-family:'GT_America-Regular',Helvetica] font-normal text-[color:var(--token-typography-black)] text-lg tracking-[0.90px] leading-6 whitespace-nowrap">
-                {item}
-              </span>
-              {index < bannerItems.length - 1 && (
-                <div className="w-[5px] h-[5px] bg-[#8080804c] rounded-[2.5px] flex-shrink-0" />
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+      <div className="flex flex-wrap items-center gap-3 px-0 py-5 border-t border-b border-dashed border-[rgba(176,176,176,0.40)] w-full">
+        {bannerItems.map((item, index) => (
+          <React.Fragment key={index}>
+            <span
+              className="font-normal text-black text-sm md:text-base lg:text-lg leading-6 uppercase"
+              style={{
+                fontFamily: "'GT America', -apple-system, Roboto, Helvetica, sans-serif",
+                letterSpacing: '0.9px'
+              }}
+            >
+              {item}
+            </span>
+            {index < bannerItems.length - 1 && (
+              <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                <circle cx="2.5" cy="2.5" r="2.5" fill="#808080" fillOpacity="0.3"/>
+              </svg>
+            )}
+          </React.Fragment>
+        ))}
       </div>
 
       <div className="flex flex-col items-start gap-[60px] w-full">
