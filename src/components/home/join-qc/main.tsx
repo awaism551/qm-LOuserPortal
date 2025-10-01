@@ -54,9 +54,6 @@ export default function JoinQC() {
         </div>
         <div data-layer="Media Card" data-price="false" data-type="Hover" className="MediaCard size- inline-flex flex-col justify-start items-start gap-5">
           <div data-layer="Image" className="Image size-96 relative overflow-hidden">
-            <div data-layer="Frame 2131336532" className="Frame2131336532 size- px-3 py-2 right-4 bottom-4 absolute bg-black/20 outline outline-1 outline-offset-[-1px] outline-Stroke-White-56%/60 backdrop-blur-xl inline-flex justify-center items-center gap-2.5">
-              <div data-layer="View Details" className="ViewDetails justify-start text-Typography-White text-base font-normal font-['apos;GT_America'apos;] leading-tight">View Details</div>
-            </div>
           </div>
           <div data-layer="Card Content" className="CardContent self-stretch flex flex-col justify-start items-start gap-7">
             <div data-layer="Card Content" className="CardContent self-stretch flex flex-col justify-start items-start gap-6">
