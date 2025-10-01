@@ -34,7 +34,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage, cu
     <button
       type="button"
       onClick={onToggleLanguage}
-      className="justify-start text-Typography-White text-base font-medium font-['IBM_Plex_Sans_Arabic'] leading-relaxed cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-0 p-0"
+      className="justify-start text-white text-base font-medium leading-[26px] cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-0 p-0"
+      style={{ fontFamily: "'IBM Plex Sans Arabic', -apple-system, Roboto, Helvetica, sans-serif" }}
     >
       {targetLabel}
     </button>
