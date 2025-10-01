@@ -113,7 +113,7 @@ export default function EventHighlightsSection() {
 
                     <div className="flex flex-col gap-3 w-full">
                       <h3
-                        className="text-black text-4xl font-light leading-10 capitalize"
+                        className="text-black text-[36px] font-light leading-10 capitalize"
                         style={{ fontFamily: "'Lyon Arabic Display', -apple-system, Roboto, Helvetica, sans-serif" }}
                       >
                         {event.title}
