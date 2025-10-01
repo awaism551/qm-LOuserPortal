@@ -1,9 +1,7 @@
-
-
 export default function OurPartners() {
   return (
     <div className="w-full flex justify-center bg-[#FFF3F7] text-[#000000]">
-    <div data-layer="Client Logo Section" data-type="Light" className="ClientLogoSection w-[1440px] py-24 bg-Background-Brand-1 inline-flex flex-col justify-center items-start gap-14 overflow-hidden">
+    <div data-layer="Client Logo Section" data-type="Light" className="ClientLogoSection w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-14 py-24 bg-Background-Brand-1 inline-flex flex-col justify-center items-start gap-14 overflow-hidden">
   <div data-layer="Frame 2131336840" className="Frame2131336840 self-stretch flex flex-col justify-start items-start gap-10">
     <div data-layer="Frame 2131336597" className="Frame2131336597 w-[1320px] inline-flex justify-between items-end">
       <div data-layer="Our partners" className="OurPartners w-96 justify-start text-Typography-Black text-6xl font-light font-['Lyon_Arabic_Display'] capitalize leading-[66px]">Our partners</div>

@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <div className="w-full flex justify-center bg-[#3A2235] text-[#ffffff]">
-           <div data-layer="Media & Stories" className="MediaStories w-[1440px] px-14 pt-24 pb-10 bg-Background-Medjool inline-flex flex-col justify-start items-start gap-20">
+           <div data-layer="Media & Stories" className="MediaStories w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-14 pt-24 pb-10 bg-Background-Medjool inline-flex flex-col justify-start items-start gap-20">
   <div data-layer="Top Content" className="TopContent self-stretch inline-flex justify-between items-start">
     <div data-layer="Subscribe Section" className="SubscribeSection flex-1 inline-flex flex-col justify-center items-start gap-8">
       <div data-layer="Text Content" className="TextContent self-stretch flex flex-col justify-start items-start gap-3">

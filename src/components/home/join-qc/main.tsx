@@ -1,9 +1,7 @@
-
-
 export default function JoinQC() {
   return (
     <div className="w-full flex justify-center">
-      <div data-layer="Frame 2131336913" className="Frame2131336913 w-[1440px] px-14 py-24 bg-Background-White inline-flex flex-col justify-start items-start gap-10 overflow-hidden">
+      <div data-layer="Frame 2131336913" className="Frame2131336913 w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-14 py-24 bg-Background-White inline-flex flex-col justify-start items-start gap-10 overflow-hidden">
   <div data-layer="Join Qatar Creates to connect deeply with art, culture, and exclusive experiences shaping Qatar&apos;s creative community." className="JoinQatarCreatesToConnectDeeplyWithArtCultureAndExclusiveExperiencesShapingQatarSCreativeCommunity w-[886px] justify-start"><span className="text-Typography-Black text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">Join Qatar Creates to </span><span className="text-Typography-Brand text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">connect</span><span className="text-Typography-Black text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]"> deeply with </span><span className="text-Typography-Brand text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">art</span><span className="text-Typography-Black text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">, </span><span className="text-Typography-Brand text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">culture</span><span className="text-Typography-Black text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">, and </span><span className="text-Typography-Brand text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]">exclusive experiences</span><span className="text-Typography-Black text-6xl font-light font-['apos;Lyon_Arabic_Display'apos;] capitalize leading-[66px]"> shaping Qatar&apos;s creative community.</span></div>
   <div data-layer="Frame 2131336912" className="Frame2131336912 self-stretch flex flex-col justify-start items-start gap-10">
     <div data-layer="Info" className="Info size- py-5 border-t border-b border-zinc-400/40 inline-flex justify-start items-center gap-3">
@@ -56,7 +54,7 @@ export default function JoinQC() {
         </div>
         <div data-layer="Media Card" data-price="false" data-type="Hover" className="MediaCard size- inline-flex flex-col justify-start items-start gap-5">
           <div data-layer="Image" className="Image size-96 relative overflow-hidden">
-            <div data-layer="Frame 2131336532" className="Frame2131336532 size- px-3 py-2 left-[190px] top-[264px] absolute bg-black/20 outline outline-1 outline-offset-[-1px] outline-Stroke-White-56%/60 backdrop-blur-xl inline-flex justify-center items-center gap-2.5">
+            <div data-layer="Frame 2131336532" className="Frame2131336532 size- px-3 py-2 right-4 bottom-4 absolute bg-black/20 outline outline-1 outline-offset-[-1px] outline-Stroke-White-56%/60 backdrop-blur-xl inline-flex justify-center items-center gap-2.5">
               <div data-layer="View Details" className="ViewDetails justify-start text-Typography-White text-base font-normal font-['apos;GT_America'apos;] leading-tight">View Details</div>
             </div>
           </div>
@@ -165,7 +163,7 @@ export default function JoinQC() {
         </div>
       </div>
       <div data-layer="Frame 2131336812" className="Frame2131336812 self-stretch inline-flex justify-start items-center gap-20">
-        <div data-layer="Line 1434" className="Line1434 w-[1140px] h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-Grey"></div>
+        <div data-layer="Line 1434" className="Line1434 flex-1 h-0 outline outline-1 outline-offset-[-0.50px] outline-Stroke-Grey"></div>
         <div data-layer="Line 1435" className="Line1435 w-[604px] h-0 outline outline-[3px] outline-offset-[-1.50px] outline-Stroke-Black"></div>
         <div data-layer="Arrow" className="Arrow size- flex justify-start items-center gap-3">
           <div data-layer="Button" data-type="Left" className="Button size-11 px-5 py-3 outline outline-1 outline-offset-[-1px] outline-Stroke-Black flex justify-center items-center gap-5 overflow-hidden">

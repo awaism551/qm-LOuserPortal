@@ -13,7 +13,7 @@ const TopNavigation: React.FC<TopNavigationProps> = ({ className = "" }) => {
   const pathname = usePathname();
   const currentLocale: 'en' | 'ar' = (pathname?.split('/')?.[1] === 'ar') ? 'ar' : 'en';
   return (
-    <div data-layer="Top Nav" data-property-1="Default" className={`TopNav w-full px-14 py-5 left-0 top-0 absolute inline-flex justify-between items-center ${className}`}>
+    <div data-layer="Top Nav" data-property-1="Default" className={`TopNav w-full px-4 md:px-8 lg:px-14 py-5 left-0 top-0 absolute inline-flex justify-between items-center ${className}`}>
       <div data-layer="Logo & Menu" className="LogoMenu size- flex justify-start items-center gap-14">
         <Logo />
       </div>

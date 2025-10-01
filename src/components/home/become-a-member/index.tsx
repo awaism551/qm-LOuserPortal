@@ -4,7 +4,7 @@ import { PinkDot, GrayTick } from "@/icons/icons";
 export default function BecomeAMember() {
   return (
     <div className="w-full flex justify-center bg-[#3A2235] text-[#ffffff]">
-    <div data-layer="Frame 2131336910" className="Frame2131336910 w-[1440px] py-24 bg-Background-Medjool inline-flex flex-col justify-start items-start gap-14 overflow-hidden">
+    <div data-layer="Frame 2131336910" className="Frame2131336910 w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-14 py-24 bg-Background-Medjool inline-flex flex-col justify-start items-start gap-14 overflow-hidden">
   <div data-layer="Frame 2131336597" className="Frame2131336597 w-[1320px] inline-flex justify-between items-start">
     <div data-layer="Become a member of qatar creates" className="BecomeAMemberOfQatarCreates w-[460px] justify-start text-[60px] text-Typography-White text-6xl font-light font-(family-name:--desktop-display-2xl-light-font-family) capitalize leading-[66px]">Become a member of qatar creates</div>
     <div data-layer="Subtitle" className="Subtitle w-72 justify-start text-white/64 text-base font-normal text-[16px] font-(family-name:--font-gt-america) leading-[20px]">From fashion to film, music to design, discover the cultural festivals that shape Qatar’s creative calendar.</div>
