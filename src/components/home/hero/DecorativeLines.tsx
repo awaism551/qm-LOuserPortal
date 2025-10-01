@@ -6,10 +6,19 @@ interface DecorativeLinesProps {
 
 const DecorativeLines: React.FC<DecorativeLinesProps> = ({ className = "" }) => {
   return (
-    <div data-layer="Frame 2131336114" className={`Frame2131336114 hidden lg:flex flex-col justify-center items-center gap-2 ${className}`}>
-      <div data-layer="Line 1396 (Stroke)" className="Line1396Stroke w-8 h-0.5 bg-white/20" />
-      <div data-layer="Line 1397 (Stroke)" className="Line1397Stroke w-8 h-0.5 bg-white" />
-      <div data-layer="Line 1398 (Stroke)" className="Line1398Stroke w-8 h-0.5 bg-white/20" />
+    <div className={`hidden lg:flex flex-col justify-center items-center ${className}`}>
+      <svg
+        width="4"
+        height="140"
+        viewBox="0 0 4 140"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="flex flex-col justify-center items-center"
+      >
+        <path d="M-1.74846e-06 100L4 100L4 140L0 140L-1.74846e-06 100Z" fill="white" fillOpacity="0.2"/>
+        <path d="M-1.74846e-06 50L4 50L4 90L0 90L-1.74846e-06 50Z" fill="white"/>
+        <path d="M-1.74846e-06 0L4 -1.74846e-07L4 40L0 40L-1.74846e-06 0Z" fill="white" fillOpacity="0.2"/>
+      </svg>
     </div>
   );
 };
