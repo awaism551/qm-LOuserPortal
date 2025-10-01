@@ -17,7 +17,7 @@ const TopNavigation: React.FC<TopNavigationProps> = ({ className = "" }) => {
       <div data-layer="Logo & Menu" className="LogoMenu flex justify-start items-center gap-14">
         <Logo />
       </div>
-      <div className="flex justify-start items-center gap-7.5">
+      <div className="flex justify-start items-center gap-[30px]">
         <LanguageSelector currentLanguage={currentLocale} currentUrl={pathname || '/'} />
         <div data-layer="Search & CTA" className="SearchCta flex justify-start items-center gap-3">
           <div data-layer="Component 4" data-icon-placeholder="false" data-size="lg" data-state="Default 2" data-type="Primary" className="Component4 flex justify-start items-center">
