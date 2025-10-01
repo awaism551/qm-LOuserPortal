@@ -6,17 +6,24 @@ interface LoginButtonProps {
   className?: string;
 }
 
-const LoginButton: React.FC<LoginButtonProps> = ({ 
-  href = "#", 
+const LoginButton: React.FC<LoginButtonProps> = ({
+  href = "#",
   text = "log in",
-  className = "" 
+  className = ""
 }) => {
   return (
-    <a 
+    <a
       href={href}
-      className={`Button h-12 px-5 py-3 bg-Button-Background-White outline outline-1 outline-offset-[-1px] outline-Stroke-Grey flex justify-center items-center gap-2.5 overflow-hidden cursor-pointer no-underline ${className}`}
+      className={`Button h-12 px-5 py-3 bg-white border border-[#E7E7E7] flex justify-center items-center gap-2.5 overflow-hidden cursor-pointer no-underline ${className}`}
     >
-      <div data-layer="text" className="Text text-center justify-start text-Button-Background-Text-Black text-base font-normal font-['GT_America'] uppercase leading-normal tracking-tight">
+      <div
+        data-layer="text"
+        className="text-center text-black text-base font-normal uppercase leading-6"
+        style={{
+          fontFamily: "'GT America', -apple-system, Roboto, Helvetica, sans-serif",
+          letterSpacing: '0.16px'
+        }}
+      >
         {text}
       </div>
     </a>
