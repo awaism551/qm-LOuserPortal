@@ -197,6 +197,7 @@ export default function EventHighlightsSection() {
         </div>
 
         <div className="flex items-center gap-20 w-full">
+          {/* gap-20 = 80px matches Figma design */}
           <div className="flex-1 max-w-[1140px] h-[0.5px] relative">
             <div className="absolute left-0 top-0 w-full h-[0.5px] bg-[#E7E7E7]" />
             <div className="absolute left-0 top-[1px] w-full max-w-[604px] h-[1px] bg-black" />
