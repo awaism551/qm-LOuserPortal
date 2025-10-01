@@ -204,7 +204,7 @@ export default function EventHighlightsSection() {
 
           <div className="flex items-center gap-[12px] flex-shrink-0">
             <button
-              className="w-11 h-11 p-3 px-5 border border-black flex items-center justify-center"
+              className="w-11 h-11 py-3 px-5 border border-black flex items-center justify-center"
               aria-label="Previous"
             >
               <svg
@@ -213,14 +213,14 @@ export default function EventHighlightsSection() {
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-6 h-6 flex-shrink-0"
               >
                 <path d="M15 6L9 12L15 18" stroke="black" strokeWidth="1.5" strokeMiterlimit="16"/>
               </svg>
             </button>
 
             <button
-              className="w-11 h-11 p-3 px-5 bg-[#FF536D] flex items-center justify-center"
+              className="w-11 h-11 py-3 px-5 bg-[#FF536D] flex items-center justify-center"
               aria-label="Next"
             >
               <svg
@@ -229,7 +229,7 @@ export default function EventHighlightsSection() {
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-6 h-6 flex-shrink-0"
               >
                 <path d="M9.00005 6L15 12L9 18" stroke="white" strokeWidth="1.5" strokeMiterlimit="16"/>
               </svg>
