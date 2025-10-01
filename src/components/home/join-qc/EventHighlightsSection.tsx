@@ -86,7 +86,7 @@ export default function EventHighlightsSection() {
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div
-                      className="flex px-3 py-2 justify-center items-center gap-2.5 border border-white/56 bg-black/20 backdrop-blur-[24px]"
+                      className="flex px-3 py-2 justify-center items-center gap-[10px] border border-white/56 bg-black/20 backdrop-blur-[24px]"
                       style={{ width: '114px', height: '36px' }}
                     >
                       <span
