@@ -3,7 +3,7 @@ import { ToggleMinus, TogglePlus } from "@/icons/icons";
 export default function Faqs() {
     return (
         <div className="w-full flex justify-center">
-        <div data-layer="Media & Stories" data-property-1="Default" className="MediaStories w-[1440px] px-14 py-24 bg-Background-White inline-flex justify-start items-start gap-6">
+        <div data-layer="Media & Stories" data-property-1="Default" className="MediaStories w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-14 py-24 bg-Background-White inline-flex justify-start items-start gap-6">
   <div data-layer="Frame 2131336603" className="Frame2131336603 flex-1 inline-flex flex-col justify-start items-start gap-10">
     <div data-layer="FAQ’s" className="FaqS justify-start text-Typography-Black text-6xl font-light font-['Lyon_Arabic_Display'] capitalize leading-[66px]">FAQ’s</div>
   </div>
