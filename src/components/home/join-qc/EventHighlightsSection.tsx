@@ -151,26 +151,26 @@ export default function EventHighlightsSection() {
           ))}
         </div>
 
-        <div className="flex items-center gap-20 w-full">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent relative">
-            <div className="absolute left-0 top-0 w-[604px] h-[3px] bg-gradient-to-r from-gray-600 to-transparent -translate-y-1" />
+        <div className="flex items-center gap-10 md:gap-20 w-full">
+          <div className="flex-1 h-[0.5px] relative">
+            <div className="absolute left-0 top-0 w-full h-[0.5px] bg-[#E7E7E7]" />
+            <div className="absolute left-0 top-0 w-full max-w-[604px] h-[1px] bg-black" />
           </div>
 
-          <div className="flex items-center gap-3">
-            <Button
-              variant="outline"
-              className="w-11 h-11 border-token-stroke-black bg-token-background-brand-2 h-auto"
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <button
+              className="w-11 h-11 border border-black flex items-center justify-center"
+              aria-label="Previous"
             >
-              <ArrowLeft className="w-6 h-6" />
-            </Button>
+              <ArrowLeft className="w-6 h-6 stroke-black" strokeWidth="1.5" />
+            </button>
 
-            <Button
-              variant="outline"
-              size="icon"
-              className="w-11 h-11 bg-token-background-brand-2 border-[color:var(--token-iconography-black)] h-auto"
+            <button
+              className="w-11 h-11 bg-[#FF536D] flex items-center justify-center"
+              aria-label="Next"
             >
-              <ArrowRight className="w-6 h-6" />
-            </Button>
+              <ArrowRight className="w-6 h-6 stroke-white" strokeWidth="1.5" />
+            </button>
           </div>
         </div>
       </div>
